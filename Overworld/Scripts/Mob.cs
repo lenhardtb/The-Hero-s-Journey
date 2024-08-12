@@ -18,13 +18,7 @@ public partial class Mob : RigidBody3D
 	[Export]
 	public string CustomCombatScene;
 	
-	[ExportGroup("Mobility Flags")]
-	[Export]
-	public bool PrefersRoads;
-	[Export]
-	public bool CanSwim;
-	[Export]
-	public bool CanWalk;
+	
 	
 	public bool HasCollided = false;
 	
@@ -62,7 +56,7 @@ public partial class Mob : RigidBody3D
 		
 		TileMapDisplay3D display = (TileMapDisplay3D)GetTree().GetFirstNodeInGroup("OverworldTileMapDisplay");
 		
-		Behavior.Pathfinder = OverworldAStar.GetOverworldAStar(PrefersRoads, CanSwim, CanWalk, display);
+		Behavior.Pathfinder = OverworldAStar.GetOverworldAStar(Behavior.MobilityFlags, display);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

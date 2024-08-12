@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://btlg3myha52aa"]
+
+[ext_resource type="TileSet" uid="uid://b2xl8hleh68th" path="res://Locations/Scenes/OpenTown/OpenTownBackground.tres" id="1_p4icq"]
+
+[node name="Layer1" type="TileMapLayer"]
+use_parent_material = true
+tile_set = ExtResource("1_p4icq")

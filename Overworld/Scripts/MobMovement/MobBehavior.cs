@@ -8,6 +8,9 @@ public abstract partial class MobBehavior : Resource
 	[Export(PropertyHint.Flags, "Hero,King,Brigands,Slimes")]
 	public int Allegiances = 0;
 	
+	[Export(PropertyHint.Flags, "CanWalk,CanSwim,PrefersRoads,FastOnRoads")]
+	public int MobilityFlags = 1;
+	
 	public static PlayerBehavior Player;
 	public static LinkedList<MobBehavior> Mobs = new LinkedList<MobBehavior>();
 	

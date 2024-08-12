@@ -34,4 +34,3 @@ public partial class BasicNPC : StaticBody3D
 	}
 	
 }
-

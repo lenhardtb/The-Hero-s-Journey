@@ -10,7 +10,7 @@ public partial class TileMapDisplay3D : Sprite3D
 	public SubViewport sub;
 	
 	[Export]
-	public TileMap tm;
+	public TileMapLayer[] tm = new TileMapLayer[]{};
 	
 	bool isRendering;
 	// Called when the node enters the scene tree for the first time.
@@ -22,43 +22,76 @@ public partial class TileMapDisplay3D : Sprite3D
 			sub = GetNodeOrNull<SubViewport>("SubViewport");
 			if(sub == null) isRendering = false;
 		}
-		if(tm == null)
+		if(tm.Length == 0)
 		{	
-			tm = GetNodeOrNull<TileMap>("SubViewport/TileMap");
+			System.Collections.Generic.List<TileMapLayer> layerHits = new System.Collections.Generic.List<TileMapLayer>(1); 
+			
+			foreach(Node n in sub.GetChildren())
+			{
+				//bool isTML = ();
+				if(n is TileMapLayer)
+					layerHits.Add((TileMapLayer)n);
+			}
+			
+			tm = layerHits.ToArray();
+			
 			if(tm == null) isRendering = false;
 		}
 		if(isRendering)
 		{
-			Rect2I tmRect = tm.GetUsedRect();
-			sub.Size = tm.GetUsedRect().Size * MAP_PIXELS_UNIT;
+			//zero-size and position rectangle
+			Rect2I layerRect = new Rect2I();
+			foreach(Node n in sub.GetChildren())
+			{
+				//bool isTML = ();
+				if(n is TileMapLayer)
+				{
+					Rect2I usedRect = ((TileMapLayer)n).GetUsedRect();
+					layerRect = layerRect.Merge(usedRect);
+					GD.Print("Rect added! noe size " + layerRect.Size);
+				}
+			}
 			
-			//the tilemap does not appear contered in the view when it is not centered around (0,0)
-			//we have the correct size to make the sprite, but we need to shift it to actually be inside
-			Vector2 uncenteredOffset = new Vector2(tmRect.Size.X, tmRect.Size.Y) / 2.0f + new Vector2(tmRect.Position.X, tmRect.Position.Y);
+			//subviewport rect has to stay centered on 0,0
+			//so we need to make a rect that is just as big in the other direction
+			Rect2I invertRect = new Rect2I();
+			invertRect.Position = -layerRect.End;
+			invertRect.End = -layerRect.Position;
 			
-			//this lets the view look normal in the editor
-			tm.Position = Engine.IsEditorHint() ? (sub.Size / 2) : new Vector2();
-			this.Texture = sub.GetTexture();
+			GD.Print("Size of invert: " + invertRect.Size);
+			Rect2I merged = layerRect.Merge(invertRect);
+			GD.Print("Merged rect: " + merged.Size + " at " + merged.GetCenter());
+			sub.Size = layerRect.Merge(invertRect).Size * MAP_PIXELS_UNIT;
 			
-			tm.Position = tm.Position - uncenteredOffset * MAP_PIXELS_UNIT;
+			if(Engine.IsEditorHint())
+			{
+				//adjust camera
+			}
 		}
+		GD.Print("Got to end of TileMap ready()!");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		
+		if(!Engine.IsEditorHint())
+		{
+			float zPosition = this.GlobalPosition.Z;
+			Vector3 cameraPosition = GetViewport().GetCamera3D().GlobalPosition;
+			this.GlobalPosition = new Vector3(cameraPosition.X, cameraPosition.Y, zPosition);
+		}
 	}
 	
 	
 	public TileData GetCellTileData(Vector2I cellCoord, int layer = 0)
 	{
-		return tm.GetCellTileData(layer, cellCoord);
+		return tm[layer].GetCellTileData(cellCoord);
 	}
 	
 	public Vector3 GetGlobalPosCoord(Vector2I cellCoord)
 	{
-		Vector2 calcPos = tm.MapToLocal(cellCoord) + tm.Position;
+		//TODO: fix this - can have multiple layers!
+		Vector2 calcPos = tm[0].MapToLocal(cellCoord) + tm[0].Position;
 		calcPos = calcPos * MAP_PIXELS_UNIT * PixelSize;
 		
 		//2d uses opposite Y axis from 3D, also use this map's Z 
@@ -79,12 +112,13 @@ public partial class TileMapDisplay3D : Sprite3D
 		
 		Vector2 localPos = chopZ(ToLocal(globalPos));
 		
+		//TODO: fix use of tm[0] - can have multiple layers!
 		//positioning uses opposite up-down polarity from tile indeces and screen position
 		localPos = new Vector2(localPos.X, -localPos.Y) / PixelSize;
-		localPos = localPos - tm.Position;
+		localPos = localPos - tm[0].Position;
 		
 		
-		cellCoord = tm.LocalToMap(localPos);
+		cellCoord = tm[0].LocalToMap(localPos);
 		
 		return cellCoord;
 	}

@@ -8,24 +8,24 @@ public partial class OverworldAStar : AStar2D
 	//there are only so many distinct pathfinding settings out there
 	private static TileMapDisplay3D currentTiles;
 	
-	private static Dictionary<AlgorithmKey, OverworldAStar> cachedPathfinders = 
-		new Dictionary<AlgorithmKey, OverworldAStar>();
+	//the int are some mobility flags
+	private static Dictionary<int, OverworldAStar> cachedPathfinders = 
+		new Dictionary<int, OverworldAStar>();
 	
 	
-	private TileMap tiles;
+	private TileMapLayer tiles;
 	private TileMapDisplay3D mapDisplay;
 	
 	
-	private OverworldAStar(AlgorithmKey k, TileMapDisplay3D display)
+	private OverworldAStar(int k, TileMapDisplay3D display)
 	{
 		mapDisplay = display;
-		tiles = display.tm;
+		tiles = display.tm[0];
 		
 		//TODO: generate all the points and stuff
 		//some values outside the loop for efficiency
-		int numLayers = tiles.GetLayersCount();
 		
-		foreach(Vector2I cell in tiles.GetUsedCells(0))
+		foreach(Vector2I cell in tiles.GetUsedCells())
 		{
 			float weight = getTileWeight(tiles, cell, k);
 			if(weight != -1.0f)
@@ -49,36 +49,36 @@ public partial class OverworldAStar : AStar2D
 	}
 	
 	//returns -1 if invalid
-	private float getTileWeight(TileMap t, Vector2I coord, AlgorithmKey k)
+	private float getTileWeight(TileMapLayer t, Vector2I coord, int k, int layer = 0)
 	{
 		float weight = 1.0f;
 		bool isValid = true;
-		for(int i = 0; i < t.GetLayersCount(); i++)
+		
+		TileData td = t.GetCellTileData(coord);
+		
+		if(td == null)return -1.0f;
+		
+		if((bool)td.GetCustomData("IsWater"))
 		{
-			TileData td = t.GetCellTileData(i, coord);
-			
-			if(td == null)continue;
-			
-			if((bool)td.GetCustomData("IsWater"))
-			{
-				if(!k.CanSwim)
-					isValid = false;
-			}
-			else 
-			{
-				if(!k.CanWalk)
-					isValid = false;
-			}
-			
-			if((bool)td.GetCustomData("IsRoad") && k.PrefersRoads)
-				weight *= 1.3f;
-			
-			if((bool)td.GetCustomData("IsRiver"))
-				if(k.CanSwim)
-					weight *= 1.3f;
-				else
-					weight *= 0.8f;
+			//can swim
+			if((k & 2) != 0)
+				isValid = false;
 		}
+		else 
+		{
+			if((k & 1) != 0)//can walk
+				isValid = false;
+		}
+		
+		if((bool)td.GetCustomData("IsRoad") && ((k & 4) != 0))//prefers roads
+			weight *= 1.3f;
+		
+		if((bool)td.GetCustomData("IsRiver"))
+			if((k & 2) != 0)//can swim
+				weight *= 1.3f;
+			else
+				weight *= 0.8f;
+		
 		
 		if(!isValid)
 			return -1.0f;
@@ -93,21 +93,20 @@ public partial class OverworldAStar : AStar2D
 		return mapDisplay.GetGlobalPosCoord(new Vector2I((int)floatPos.X, (int)floatPos.Y));
 	}
 	
-	public static OverworldAStar GetOverworldAStar(bool prefersRoads, bool canSwim, bool canWalk, TileMapDisplay3D display)
+	public static OverworldAStar GetOverworldAStar(int mobilityFlags, TileMapDisplay3D display)
 	{
 		if(currentTiles != display)
 		{
 			cachedPathfinders.Clear();
 			currentTiles = display;
 		}
-		AlgorithmKey k = new AlgorithmKey(prefersRoads, canSwim, canWalk);
 		
-		if(cachedPathfinders.ContainsKey(k))
-			return cachedPathfinders[k];
+		if(cachedPathfinders.ContainsKey(mobilityFlags))
+			return cachedPathfinders[mobilityFlags];
 		else
 		{
-			OverworldAStar newValue = new OverworldAStar(k, display);
-			cachedPathfinders.Add(k, newValue);
+			OverworldAStar newValue = new OverworldAStar(mobilityFlags, display);
+			cachedPathfinders.Add(mobilityFlags, newValue);
 			return newValue;
 		}
 		
@@ -119,18 +118,7 @@ public partial class OverworldAStar : AStar2D
 	//private int cachedNextValue;
 	
 	
-	private struct AlgorithmKey
-	{
-		
-		public bool PrefersRoads, CanSwim, CanWalk;
-		
-		public AlgorithmKey(bool prefersRoads, bool canSwim, bool canWalk)
-		{
-			PrefersRoads = prefersRoads;
-			CanSwim = canSwim;
-			CanWalk = canWalk;
-		}
-	}
+	
 	
 	
 }

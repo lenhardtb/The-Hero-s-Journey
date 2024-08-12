@@ -25,12 +25,13 @@ public partial class RoamBehavior : MobBehavior
 	private const ulong minWait = 1000ul;
 	private const int waitRange = 500;
 	
-	private Random r;
+	private static Random r;
 	
 	public RoamBehavior() : base()
 	{
 		//Mobs.AddLast(this);
-		r = new Random(THJGlobals.RandomSeed);
+		if(r == null)
+			r = new Random(THJGlobals.RandomSeed);
 		waitTime = 0ul;
 		Callable.From(delegate(){target = Center;}).CallDeferred();
 		//GD.Print("Center is: " + Center);

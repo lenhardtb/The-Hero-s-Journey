@@ -248,4 +248,3 @@ public partial class InkChangeManager : Control
 		}
 	}
 }
-

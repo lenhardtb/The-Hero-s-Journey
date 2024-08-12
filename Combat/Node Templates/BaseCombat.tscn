@@ -125,26 +125,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="Spaces" type="Node3D" parent="."]
 
 [node name="LeftSide" type="Node3D" parent="Spaces"]
-transform = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0)
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0)
 AlteredCurve = SubResource("Curve_tufhl")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = false
-foldingParent = null
+CurrentFoldAmount = 0.066
 
 [node name="PaperFolding0" type="Node3D" parent="Spaces/LeftSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_xanfm")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.066
 
 [node name="AQM0" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71841, 0.40707, 0)
@@ -152,19 +144,13 @@ mesh = SubResource("QuadMesh_vlev2")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_pvq6k")
 
 [node name="PaperFolding1" type="Node3D" parent="Spaces/LeftSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_vcw5h")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.066
 
 [node name="AQM1" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.812725, 0)
@@ -172,19 +158,13 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding2" type="Node3D" parent="Spaces/LeftSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_d7k3l")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.066
 
 [node name="AQM2" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.713301, 0.411054, 0)
@@ -192,38 +172,26 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding3" type="Node3D" parent="Spaces/LeftSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_njdvp")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.066
 
 [node name="AQM3" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding3"]
 mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding4" type="Node3D" parent="Spaces/LeftSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_klhec")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.066
 
 [node name="AQM4" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.721115, -0.405901, 0)
@@ -231,19 +199,13 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding5" type="Node3D" parent="Spaces/LeftSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_o8xas")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.066
 
 [node name="AQM5" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.781051, 0)
@@ -251,19 +213,13 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding6" type="Node3D" parent="Spaces/LeftSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.066
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_7kqx5")
-_CurrentFoldAmount = 0.066
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.066
 
 [node name="AQM6" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723753, -0.40477, 0)
@@ -271,30 +227,20 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="RightSide" type="Node3D" parent="Spaces"]
-transform = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0)
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0)
 AlteredCurve = SubResource("Curve_tx1yi")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = false
-foldingParent = null
+CurrentFoldAmount = 0.047
 
 [node name="PaperFolding0" type="Node3D" parent="Spaces/RightSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_eca46")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.047
 
 [node name="AQM0" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.720372, 0.410989, 0)
@@ -302,19 +248,13 @@ mesh = SubResource("QuadMesh_vlev2")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_pvq6k")
 
 [node name="PaperFolding1" type="Node3D" parent="Spaces/RightSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_g34wh")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.047
 
 [node name="AQM1" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.812725, 0)
@@ -322,19 +262,13 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding2" type="Node3D" parent="Spaces/RightSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_gn44r")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.047
 
 [node name="AQM2" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718332, 0.406062, 0)
@@ -342,38 +276,26 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding3" type="Node3D" parent="Spaces/RightSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_amyqr")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.047
 
 [node name="AQM3" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding3"]
 mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding4" type="Node3D" parent="Spaces/RightSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_j80ae")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.047
 
 [node name="AQM4" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718573, -0.405791, 0)
@@ -381,19 +303,13 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding5" type="Node3D" parent="Spaces/RightSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_6ptnk")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.047
 
 [node name="AQM5" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.781051, 0)
@@ -401,19 +317,13 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="PaperFolding6" type="Node3D" parent="Spaces/RightSide"]
 script = ExtResource("5_k08mc")
-CurrentFoldAmount = 0.047
 NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 AlteredCurve = SubResource("Curve_6h3gj")
-_CurrentFoldAmount = 0.047
-hasFoldingParent = true
-foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
-
+CurrentFoldAmount = 0.047
 
 [node name="AQM6" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726164, -0.404791, 0)
@@ -421,8 +331,6 @@ mesh = SubResource("QuadMesh_ltw0s")
 skeleton = NodePath("../..")
 script = ExtResource("5_yj21m")
 ShaderTexture = ExtResource("6_v7gqw")
-_ShaderTexture = ExtResource("6_v7gqw")
-sm = SubResource("ShaderMaterial_ot7ef")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)

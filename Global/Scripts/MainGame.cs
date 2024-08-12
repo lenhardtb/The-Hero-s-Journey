@@ -62,17 +62,16 @@ public partial class MainGame : Node3D
 		discordInstance = new Discord.Discord(1148422660922023976, (UInt64)Discord.CreateFlags.Default);
 		activityMan = discordInstance.GetActivityManager();
 		
-		SceneTreeTimer firstNodeTimer = GetTree().CreateTimer(0.001f);
-		firstNodeTimer.Timeout += delegate()
-		{
-			GD.Print("MainGame timer called!");
-			
-			Node3D firstSceneNode = (Node3D)FirstScene.Instantiate();
-			View.AddChild(firstSceneNode);
-			CurrentScene = firstSceneNode;//(Node3D)View.GetChildren()[0];
-		};
+		this.CallDeferred("AddFirstScene");
 	}
 
+	public void AddFirstScene()
+	{
+		Node3D firstSceneNode = (Node3D)FirstScene.Instantiate();
+			View.AddChild(firstSceneNode);
+			CurrentScene = firstSceneNode;//(Node3D)View.GetChildren()[0];
+	}
+	
 	private void InitTestData()
 	{
 		Godot.Collections.Dictionary<string, Variant> data = THJGlobals.SaveData;

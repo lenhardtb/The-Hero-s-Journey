@@ -94,10 +94,12 @@ offset_bottom = -0.231998
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_stretch_ratio = 3.0
+current_tab = 0
 tabs_visible = false
 
 [node name="MessagePanel" type="Panel" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="MessageLabel" type="Label" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/MessagePanel"]
 layout_mode = 1
@@ -115,6 +117,7 @@ autowrap_mode = 2
 [node name="ChoicePanel" type="Panel" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="MessageLabel" type="Label" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/ChoicePanel"]
 layout_mode = 1
