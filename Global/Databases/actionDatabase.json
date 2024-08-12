@@ -1,0 +1,9 @@
+{
+  "PiercingSlash":
+	{
+	  "Name": "Piercing Slash",
+	  "DamageValue": 2.0,
+	  "Position": 68,
+	  "IgnoreThreat": 20
+	}
+}

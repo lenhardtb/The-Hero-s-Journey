@@ -1,0 +1,19 @@
+{
+  	"Satyr": {
+	  "Name": "Satyr",
+	  "BasicAttackName": "Basic Attack",
+	  "SpecialAttackName": "PiercingSlash",
+	  "Attack": 40,
+	  "Defense": 20,
+	  "MaxHP": 100
+	},
+	"SlimeWorker" : {
+	  "Name": "Slime Worker",
+	  "BasicAttackName": "Basic Attack",
+	  "SpecialAttackName": "PiercingSlash",
+	  "Attack": 10,
+	  "Defense": 30,
+	  "MaxHP": 200
+	}
+  
+}

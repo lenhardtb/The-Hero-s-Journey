@@ -1,0 +1,104 @@
+[gd_resource type="AnimationLibrary" load_steps=53 format=3 uid="uid://bmyptry6p1vgr"]
+
+[ext_resource type="Texture2D" uid="uid://k5ruji0mnfe8" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle1.png" id="1_exycr"]
+[ext_resource type="Texture2D" uid="uid://b5j2onr4pw03w" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle2.png" id="2_5immj"]
+[ext_resource type="Texture2D" uid="uid://c7moagj7bbmjt" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle3.png" id="3_5x4yb"]
+[ext_resource type="Texture2D" uid="uid://dqvvowmnqrjc6" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack3.png" id="3_pybyv"]
+[ext_resource type="Texture2D" uid="uid://bsm81nt87brey" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle4.png" id="4_3rte8"]
+[ext_resource type="Texture2D" uid="uid://402fgc8wq2bt" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack4.png" id="4_p0frl"]
+[ext_resource type="Texture2D" uid="uid://chiqejylnbyw" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle5.png" id="5_fk27a"]
+[ext_resource type="Texture2D" uid="uid://dr0jaj7ubvx7a" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack5.png" id="5_pjkmt"]
+[ext_resource type="Texture2D" uid="uid://cegljnvd7echd" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack6.png" id="6_ax3aj"]
+[ext_resource type="Texture2D" uid="uid://4l32yf06e66c" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle6.png" id="6_c38dy"]
+[ext_resource type="Texture2D" uid="uid://bf4ylvgvg7rx2" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle7.png" id="7_70qcq"]
+[ext_resource type="Texture2D" uid="uid://drf34jhtpj4jf" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack7.png" id="7_lfpxi"]
+[ext_resource type="Texture2D" uid="uid://uilgehfsrbud" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle8.png" id="8_4nibq"]
+[ext_resource type="Texture2D" uid="uid://yfa85a8qf3yq" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack8.png" id="8_o76rn"]
+[ext_resource type="Texture2D" uid="uid://5xluxydhf7a1" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack9.png" id="9_7cqow"]
+[ext_resource type="Texture2D" uid="uid://bqsl6phuwrxgt" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle9.png" id="9_p00m7"]
+[ext_resource type="Texture2D" uid="uid://bgnneofiwrrwm" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerIdle10.png" id="10_25oyq"]
+[ext_resource type="Texture2D" uid="uid://bawfwi6ynrt1f" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack10.png" id="10_dise4"]
+[ext_resource type="Texture2D" uid="uid://dgm6c2ubwcvd5" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack11.png" id="11_6kepn"]
+[ext_resource type="Texture2D" uid="uid://cd2khwaa21ehd" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack1.png" id="11_xdy7p"]
+[ext_resource type="Texture2D" uid="uid://hnsd7urifioq" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack2.png" id="12_0b2cf"]
+[ext_resource type="Texture2D" uid="uid://bgbbcahksqfpr" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack12.png" id="12_uhv8w"]
+[ext_resource type="Texture2D" uid="uid://c0cois32n1wy" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerAttack13.png" id="13_natur"]
+[ext_resource type="Texture2D" uid="uid://hmd55ja7sxy2" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath1.png" id="13_p1x1e"]
+[ext_resource type="Texture2D" uid="uid://bae5vylbhiu5v" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath2.png" id="14_x0lbf"]
+[ext_resource type="Texture2D" uid="uid://bq4gky50j0laf" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath3.png" id="16_n84tn"]
+[ext_resource type="Texture2D" uid="uid://dgmukaj1p3sy4" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath4.png" id="17_qgkae"]
+[ext_resource type="Texture2D" uid="uid://qmf5xy43wwdg" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath5.png" id="18_fijt4"]
+[ext_resource type="Texture2D" uid="uid://cyfggs4b34r06" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath6.png" id="19_oaeor"]
+[ext_resource type="Texture2D" uid="uid://b3n0oeb6wrlc2" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath7.png" id="20_4bwed"]
+[ext_resource type="Texture2D" uid="uid://dvuij6qsfipgd" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath8.png" id="21_voheo"]
+[ext_resource type="Texture2D" uid="uid://bp57ms0qumsw0" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath9.png" id="22_wj4w4"]
+[ext_resource type="Texture2D" uid="uid://bissk7thvpkds" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath10.png" id="23_q3q3c"]
+[ext_resource type="Texture2D" uid="uid://b284lm0wsrac6" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath11.png" id="24_r4gqo"]
+[ext_resource type="Texture2D" uid="uid://2id0vlp5g4" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath12.png" id="25_fy8el"]
+[ext_resource type="Texture2D" uid="uid://dkcjplhlvm77v" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath13.png" id="26_xdkfb"]
+[ext_resource type="Texture2D" uid="uid://cawx70rhctsma" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath14.png" id="27_jvvln"]
+[ext_resource type="Texture2D" uid="uid://b3ubsv7kau24" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath15.png" id="28_bkyoh"]
+[ext_resource type="Texture2D" uid="uid://dla5tfl6ctt2n" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath16.png" id="29_k6yml"]
+[ext_resource type="Texture2D" uid="uid://brvm02ofstnex" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath17.png" id="30_a20br"]
+[ext_resource type="Texture2D" uid="uid://fqg11sv5mmwh" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath18.png" id="31_enrg3"]
+[ext_resource type="Texture2D" uid="uid://bcfmiiah1t33a" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath19.png" id="32_wpgkn"]
+[ext_resource type="Texture2D" uid="uid://sq6jvttdn32w" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath20.png" id="33_6csf7"]
+[ext_resource type="Texture2D" uid="uid://b47httwdjupkt" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath21.png" id="34_rn05o"]
+[ext_resource type="Texture2D" uid="uid://b57hha0jv3f8g" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath22.png" id="35_cwpha"]
+[ext_resource type="Texture2D" uid="uid://d3ttqdwq6bhkr" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath23.png" id="36_emehr"]
+[ext_resource type="Texture2D" uid="uid://ch7grb66cn3ar" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath24.png" id="37_47h02"]
+[ext_resource type="Texture2D" uid="uid://c34umauf1up8c" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath25.png" id="38_wag04"]
+[ext_resource type="Texture2D" uid="uid://bobwpgcnu6g1b" path="res://Combat/Sprites/SlimeWorker/SlimeWorkerDeath26.png" id="39_7cytw"]
+
+[sub_resource type="Animation" id="Animation_bwrro"]
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(":ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.6001, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_xdy7p"), ExtResource("12_0b2cf"), ExtResource("3_pybyv"), ExtResource("4_p0frl"), ExtResource("5_pjkmt"), ExtResource("6_ax3aj"), ExtResource("11_xdy7p"), ExtResource("7_lfpxi"), ExtResource("8_o76rn"), ExtResource("9_7cqow"), ExtResource("10_dise4"), ExtResource("11_6kepn"), ExtResource("12_uhv8w"), ExtResource("13_natur")]
+}
+
+[sub_resource type="Animation" id="Animation_pucx4"]
+length = 2.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(":ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_p1x1e"), ExtResource("14_x0lbf"), ExtResource("16_n84tn"), ExtResource("17_qgkae"), ExtResource("18_fijt4"), ExtResource("19_oaeor"), ExtResource("20_4bwed"), ExtResource("21_voheo"), ExtResource("22_wj4w4"), ExtResource("23_q3q3c"), ExtResource("24_r4gqo"), ExtResource("25_fy8el"), ExtResource("26_xdkfb"), ExtResource("27_jvvln"), ExtResource("28_bkyoh"), ExtResource("29_k6yml"), ExtResource("30_a20br"), ExtResource("31_enrg3"), ExtResource("32_wpgkn"), ExtResource("33_6csf7"), ExtResource("34_rn05o"), ExtResource("35_cwpha"), ExtResource("36_emehr"), ExtResource("37_47h02"), ExtResource("38_wag04"), ExtResource("39_7cytw")]
+}
+
+[sub_resource type="Animation" id="Animation_qwd0s"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(":ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_exycr"), ExtResource("2_5immj"), ExtResource("3_5x4yb"), ExtResource("4_3rte8"), ExtResource("5_fk27a"), ExtResource("6_c38dy"), ExtResource("7_70qcq"), ExtResource("8_4nibq"), ExtResource("9_p00m7"), ExtResource("10_25oyq")]
+}
+
+[resource]
+_data = {
+"Attack": SubResource("Animation_bwrro"),
+"Death": SubResource("Animation_pucx4"),
+"Idle": SubResource("Animation_qwd0s")
+}

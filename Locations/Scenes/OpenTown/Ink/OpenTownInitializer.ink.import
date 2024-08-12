@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://dqqffsnsv2rob"
+path="res://.godot/imported/OpenTownInitializer.ink-02715b98f2b6c53224ac71e681611223.res"
+
+[deps]
+
+source_file="res://Locations/Scenes/OpenTown/Ink/OpenTownInitializer.ink"
+dest_files=["res://.godot/imported/OpenTownInitializer.ink-02715b98f2b6c53224ac71e681611223.res"]
+
+[params]
+
+is_main_file=true
+compress=true

@@ -1,0 +1,669 @@
+[gd_scene load_steps=32 format=3 uid="uid://cbhb80yumy18w"]
+
+[ext_resource type="Shader" path="res://Global/PaperSprite.gdshader" id="1_6q3tk"]
+[ext_resource type="Script" path="res://Combat/Scripts/CombatEngine.cs" id="1_xqmwn"]
+[ext_resource type="Texture2D" uid="uid://gur0c16dsgh0" path="res://Combat/Sprites/Backgrounds/Battleground3/Pale/Battleground3.png" id="3_yogyh"]
+[ext_resource type="Script" path="res://Global/Scripts/PaperFolding.cs" id="5_k08mc"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="5_oj5nc"]
+[ext_resource type="Script" path="res://Global/Scripts/AnimatedQuadMesh.cs" id="5_yj21m"]
+[ext_resource type="Texture2D" uid="uid://pv4kr25outsx" path="res://Combat/Sprites/HexSpacePinkTest.png" id="6_v7gqw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_meg5w"]
+render_priority = 0
+shader = ExtResource("1_6q3tk")
+shader_parameter/sprite_tex = ExtResource("3_yogyh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_u2psr"]
+material = SubResource("ShaderMaterial_meg5w")
+size = Vector2(16, 8)
+
+[sub_resource type="Curve" id="Curve_tufhl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_xanfm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvq6k"]
+render_priority = 0
+shader = ExtResource("5_oj5nc")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("6_v7gqw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vlev2"]
+material = SubResource("ShaderMaterial_pvq6k")
+
+[sub_resource type="Curve" id="Curve_vcw5h"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ot7ef"]
+render_priority = 0
+shader = ExtResource("5_oj5nc")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("6_v7gqw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ltw0s"]
+material = SubResource("ShaderMaterial_ot7ef")
+
+[sub_resource type="Curve" id="Curve_d7k3l"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_njdvp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_klhec"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_o8xas"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7kqx5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_tx1yi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_eca46"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g34wh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gn44r"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_amyqr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j80ae"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6ptnk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6h3gj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g63cx"]
+bg_color = Color(0.360784, 0.6, 0.396078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eo78l"]
+bg_color = Color(0.294118, 0.435294, 0.6, 1)
+
+[node name="BaseCombat" type="Node3D"]
+script = ExtResource("1_xqmwn")
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("QuadMesh_u2psr")
+
+[node name="Battlefield" type="Node3D" parent="."]
+
+[node name="LeftSide" type="Node3D" parent="Battlefield"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="RightSide" type="Node3D" parent="Battlefield"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Spaces" type="Node3D" parent="."]
+
+[node name="LeftSide" type="Node3D" parent="Spaces"]
+transform = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0)
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0)
+AlteredCurve = SubResource("Curve_tufhl")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = false
+foldingParent = null
+
+[node name="PaperFolding0" type="Node3D" parent="Spaces/LeftSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_xanfm")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM0" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71841, 0.40707, 0)
+mesh = SubResource("QuadMesh_vlev2")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_pvq6k")
+
+[node name="PaperFolding1" type="Node3D" parent="Spaces/LeftSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_vcw5h")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM1" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.812725, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding2" type="Node3D" parent="Spaces/LeftSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_d7k3l")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM2" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.713301, 0.411054, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding3" type="Node3D" parent="Spaces/LeftSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_njdvp")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM3" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding3"]
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding4" type="Node3D" parent="Spaces/LeftSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_klhec")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM4" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.721115, -0.405901, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding5" type="Node3D" parent="Spaces/LeftSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_o8xas")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM5" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.781051, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding6" type="Node3D" parent="Spaces/LeftSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.066
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_7kqx5")
+_CurrentFoldAmount = 0.066
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.066,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, -1.45101, 0, 0),"AlteredCurve":SubResource("Curve_tufhl"),"_CurrentFoldAmount":0.066,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM6" type="MeshInstance3D" parent="Spaces/LeftSide/PaperFolding6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.723753, -0.40477, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="RightSide" type="Node3D" parent="Spaces"]
+transform = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0)
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0)
+AlteredCurve = SubResource("Curve_tx1yi")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = false
+foldingParent = null
+
+[node name="PaperFolding0" type="Node3D" parent="Spaces/RightSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_eca46")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM0" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.720372, 0.410989, 0)
+mesh = SubResource("QuadMesh_vlev2")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_pvq6k")
+
+[node name="PaperFolding1" type="Node3D" parent="Spaces/RightSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_g34wh")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM1" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.812725, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding2" type="Node3D" parent="Spaces/RightSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_gn44r")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM2" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718332, 0.406062, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding3" type="Node3D" parent="Spaces/RightSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_amyqr")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM3" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding3"]
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding4" type="Node3D" parent="Spaces/RightSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_j80ae")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM4" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718573, -0.405791, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding5" type="Node3D" parent="Spaces/RightSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_6ptnk")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM5" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.781051, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="PaperFolding6" type="Node3D" parent="Spaces/RightSide"]
+script = ExtResource("5_k08mc")
+CurrentFoldAmount = 0.047
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_6h3gj")
+_CurrentFoldAmount = 0.047
+hasFoldingParent = true
+foldingParent = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":ExtResource("5_k08mc"),"CurrentFoldAmount":0.047,"SettingNoFold":false,"NoFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"SettingFullFold":false,"FullFold":Transform3D(1, 0, 0, 0, 0.701631, 0.712541, 0, -0.712541, 0.701631, 1.49328, 0, 0),"AlteredCurve":SubResource("Curve_tx1yi"),"_CurrentFoldAmount":0.047,"hasFoldingParent":false,"foldingParent":null)
+
+
+[node name="AQM6" type="MeshInstance3D" parent="Spaces/RightSide/PaperFolding6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726164, -0.404791, 0)
+mesh = SubResource("QuadMesh_ltw0s")
+skeleton = NodePath("../..")
+script = ExtResource("5_yj21m")
+ShaderTexture = ExtResource("6_v7gqw")
+_ShaderTexture = ExtResource("6_v7gqw")
+sm = SubResource("ShaderMaterial_ot7ef")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+projection = 1
+size = 6.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSide" type="Panel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 250.0
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/LeftSide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar0" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar1" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 50.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 50.0
+show_percentage = false
+
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar4" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar5" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar6" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar7" type="ProgressBar" parent="CanvasLayer/Panel/LeftSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="RightSide" type="Panel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/RightSide"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar0" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar1" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 50.0
+show_percentage = false
+
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 50.0
+show_percentage = false
+
+[node name="ProgressBar4" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar5" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar6" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="ProgressBar7" type="ProgressBar" parent="CanvasLayer/Panel/RightSide/GridContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_g63cx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eo78l")
+step = 0.0
+value = 60.0
+show_percentage = false
+
+[node name="GoButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 255.0
+offset_top = 12.0
+offset_right = -255.0
+offset_bottom = 54.0
+text = "Go!"

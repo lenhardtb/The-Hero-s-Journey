@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://bc48boi1oxred"]
+
+[ext_resource type="Shape3D" uid="uid://rulnrj2ly3gt" path="res://Locations/Scenes/Node Templates/CharacterShapeDefault.tres" id="2_m78pb"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="3_3p7o6"]
+[ext_resource type="Texture2D" uid="uid://b2f2r02r11m2q" path="res://icon64.png" id="3_mfuo4"]
+[ext_resource type="Script" path="res://Global/Scripts/AnimatedQuadMesh.cs" id="4_lx20t"]
+[ext_resource type="AnimationLibrary" uid="uid://c0a28vuxr45nw" path="res://Overworld/MobAnimations/MobUniversalAnim.tres" id="5_3ow6t"]
+[ext_resource type="Script" path="res://Combat/Scripts/CombatantAnimationPlayer.cs" id="5_vyig6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydssy"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_3p7o6")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("3_mfuo4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bdt8w"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_ydssy")
+size = Vector2(2, 2)
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_8664d"]
+resource_local_to_scene = true
+
+[node name="BasicCombatant" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317383, -0.00180054, 0)
+shape = ExtResource("2_m78pb")
+
+[node name="AnimatedQuadMesh" type="MeshInstance3D" parent="."]
+sorting_offset = 1.0
+mesh = SubResource("QuadMesh_bdt8w")
+script = ExtResource("4_lx20t")
+ShaderTexture = ExtResource("3_mfuo4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedQuadMesh"]
+libraries = {
+"MobUniversalAnim": ExtResource("5_3ow6t")
+}
+script = ExtResource("5_vyig6")
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimatedQuadMesh/AnimationPlayer"]
+root_node = NodePath("../..")
+libraries = {
+"MobUniversalAnim": ExtResource("5_3ow6t")
+}
+tree_root = SubResource("AnimationNodeStateMachine_8664d")
+anim_player = NodePath("..")
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseEnter"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExit"]

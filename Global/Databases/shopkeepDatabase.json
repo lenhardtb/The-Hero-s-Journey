@@ -1,0 +1,5 @@
+{
+	"Comment": "item database name, amount, weight, cost multiplier, time multiplier",
+	"OpenTownShop": [["GrandmasCookies", 10, 10, 0.5, 1], ["Bread", 5, 1, 1, 1], 
+			   ["Bedroll", 2, 1, 1, 1], ["Emerald", 1, 0.1, 1, 1]]
+}

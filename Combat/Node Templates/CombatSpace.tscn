@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bv55naib8ww6o"]
+
+[node name="CombatSpace" type="MeshInstance3D"]

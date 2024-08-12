@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkw3mpy3tw75a"]
+
+[ext_resource type="Script" path="res://Locations/Scripts/LocationPlayer.cs" id="1_gcd0h"]
+[ext_resource type="Shape3D" uid="uid://rulnrj2ly3gt" path="res://Locations/Scenes/Node Templates/CharacterShapeDefault.tres" id="2_es103"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="3_8wdl5"]
+[ext_resource type="Script" path="res://Global/Scripts/AnimatedQuadMesh.cs" id="3_cs3vh"]
+[ext_resource type="Texture2D" uid="uid://cpgj1ntd23m62" path="res://Locations/MainChars/Player/IdleDown1.png" id="4_y88u1"]
+[ext_resource type="AnimationLibrary" uid="uid://dhnjylg6ip7eh" path="res://Locations/MainChars/Player/LocationPlayer.tres" id="6_pfphh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opx34"]
+render_priority = 0
+shader = ExtResource("3_8wdl5")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("4_y88u1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_eetgl"]
+material = SubResource("ShaderMaterial_opx34")
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykwha"]
+
+[node name="LocationPlayer" type="CharacterBody3D" node_paths=PackedStringArray("MyCamera") groups=["Player"]]
+motion_mode = 1
+platform_wall_layers = 1
+script = ExtResource("1_gcd0h")
+MovementSpeed = 5.0
+MyCamera = NodePath("Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_es103")
+
+[node name="AnimatedQuadMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_eetgl")
+script = ExtResource("3_cs3vh")
+ShaderTexture = ExtResource("4_y88u1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedQuadMesh"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ykwha"),
+"LocationPlayer": ExtResource("6_pfphh")
+}
+autoplay = "LocationPlayer/IdleDown"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+projection = 1
+size = 8.0

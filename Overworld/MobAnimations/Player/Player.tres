@@ -1,0 +1,23 @@
+[gd_resource type="AnimationLibrary" load_steps=3 format=3 uid="uid://bdxiv785yf0sa"]
+
+[ext_resource type="Texture2D" uid="uid://bjay8m7tnwxe8" path="res://Overworld/MobAnimations/Player/PlayerIdle1.png" id="1_mr08a"]
+
+[sub_resource type="Animation" id="Animation_p3edx"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_mr08a")]
+}
+
+[resource]
+_data = {
+"Idle": SubResource("Animation_p3edx")
+}

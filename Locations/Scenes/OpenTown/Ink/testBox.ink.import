@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://c8nx22wqx6unw"
+path="res://.godot/imported/testBox.ink-d6bd047712301a3e32266d7d8b611482.res"
+
+[deps]
+
+source_file="res://Locations/Scenes/OpenTown/Ink/testBox.ink"
+dest_files=["res://.godot/imported/testBox.ink-d6bd047712301a3e32266d7d8b611482.res"]
+
+[params]
+
+is_main_file=true
+compress=true

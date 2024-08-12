@@ -1,0 +1,393 @@
+[gd_scene load_steps=45 format=3 uid="uid://xlej0buex83k"]
+
+[ext_resource type="PackedScene" uid="uid://c861edyuvt3ek" path="res://Locations/Scenes/Node Templates/BaseLocation.tscn" id="1_v46gn"]
+[ext_resource type="PackedScene" uid="uid://d0tm7bdy3p42e" path="res://Locations/Scenes/TreeShrine/TreeShrineBackground.tscn" id="2_t6myi"]
+[ext_resource type="Script" path="res://Global/Scripts/PaperFolding.cs" id="3_eexbx"]
+[ext_resource type="Script" path="res://Global/Scripts/CameraMagnet.cs" id="4_a7ysl"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="4_d08e7"]
+[ext_resource type="Texture2D" uid="uid://blwpa5m20h5s3" path="res://Locations/Scenes/TreeShrine/BranchLength.png" id="5_owrer"]
+[ext_resource type="Texture2D" uid="uid://ceh0epkj7xa4n" path="res://Locations/Scenes/TreeShrine/BranchTip.png" id="6_gypt6"]
+[ext_resource type="PackedScene" uid="uid://rkbawjtc4la5" path="res://Locations/Scenes/TreeShrine/BranchLantern.tscn" id="7_6l64a"]
+[ext_resource type="Texture2D" uid="uid://ncvhx8umxvvc" path="res://Global/Resources/testPaperTexture2.jpg" id="7_gc0kp"]
+[ext_resource type="Texture2D" uid="uid://gjg8ymi2hnkx" path="res://Locations/Scenes/TreeShrine/BranchTrunk.png" id="8_jvo23"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8kcd5"]
+viewport_path = NodePath("TileMapDisplay/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1gcoh"]
+size = Vector3(14, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ueqx"]
+size = Vector3(13, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78v5g"]
+size = Vector3(1, 10, 1)
+
+[sub_resource type="Curve" id="Curve_fv1ps"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_0snyp"]
+resource_name = "TreeBreathe"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:CurrentFoldAmount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(-2, 1, -2),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jg126"]
+_data = {
+"TreeBreathe": SubResource("Animation_0snyp")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srcqw"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("8_jvo23")
+shader_parameter/paper_tex = ExtResource("7_gc0kp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a20hk"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_srcqw")
+size = Vector2(2, 2)
+
+[sub_resource type="Curve" id="Curve_txfih"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_53et4"]
+load_path = "res://.godot/imported/testPaperTexture2.jpg-3e7cc9a5216ce7c2583b559a46be5ebe.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nsdde"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("5_owrer")
+shader_parameter/paper_tex = SubResource("CompressedTexture2D_53et4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6e8mf"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_nsdde")
+
+[sub_resource type="Curve" id="Curve_024o1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s6p8x"]
+load_path = "res://.godot/imported/testPaperTexture2.jpg-3e7cc9a5216ce7c2583b559a46be5ebe.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxjqg"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("5_owrer")
+shader_parameter/paper_tex = SubResource("CompressedTexture2D_s6p8x")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vct7w"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_hxjqg")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tq1wf"]
+load_path = "res://.godot/imported/testPaperTexture2.jpg-3e7cc9a5216ce7c2583b559a46be5ebe.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ooc44"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("6_gypt6")
+shader_parameter/paper_tex = SubResource("CompressedTexture2D_tq1wf")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jytio"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_ooc44")
+
+[sub_resource type="Curve" id="Curve_c8cvk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mgha"]
+load_path = "res://.godot/imported/testPaperTexture2.jpg-3e7cc9a5216ce7c2583b559a46be5ebe.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cpsw"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("5_owrer")
+shader_parameter/paper_tex = SubResource("CompressedTexture2D_5mgha")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6p1q5"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_2cpsw")
+
+[sub_resource type="Curve" id="Curve_xvatd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j66i2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_cvkms"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ben76"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8tp3a"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("5_owrer")
+shader_parameter/paper_tex = SubResource("CompressedTexture2D_5mgha")
+
+[sub_resource type="QuadMesh" id="QuadMesh_eqxmt"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_8tp3a")
+size = Vector2(1, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_inafj"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("6_gypt6")
+shader_parameter/paper_tex = SubResource("CompressedTexture2D_tq1wf")
+
+[sub_resource type="QuadMesh" id="QuadMesh_oarl8"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_inafj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ub2ar"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_d08e7")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("6_gypt6")
+shader_parameter/paper_tex = SubResource("CompressedTexture2D_tq1wf")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pxnk8"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_ub2ar")
+
+[node name="BaseLocation" instance=ExtResource("1_v46gn")]
+
+[node name="Player" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -7.4984, 0)
+
+[node name="TileMapDisplay" parent="." index="2" node_paths=PackedStringArray("tm")]
+texture = SubResource("ViewportTexture_8kcd5")
+tm = NodePath("SubViewport/TreeShrineBackground")
+
+[node name="SubViewport" parent="TileMapDisplay" index="0"]
+size = Vector2i(704, 608)
+
+[node name="TreeShrineBackground" parent="TileMapDisplay/SubViewport" index="1" instance=ExtResource("2_t6myi")]
+position = Vector2(320, 288)
+
+[node name="Exits" parent="." index="3"]
+DropLocations = PackedVector3Array(5.54774, -5.97262, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exits" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -12.0047, 0)
+shape = SubResource("BoxShape3D_1gcoh")
+
+[node name="Barriers" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01613, -1.27946, 0)
+shape = SubResource("BoxShape3D_0ueqx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Barriers" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48865, -4.46631, 0)
+shape = SubResource("BoxShape3D_78v5g")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Barriers" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48133, -4.46631, 0)
+shape = SubResource("BoxShape3D_78v5g")
+
+[node name="TreeBase" type="Node3D" parent="." index="5"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(1, 0, 0, 0, 0.996, 0.091, 0, -0.091, 0.996, 0, -1, 0)
+FullFold = Transform3D(1, 0, 0, 0, 0.989, -0.149, 0, 0.149, 0.989, 0, -1, 0)
+AlteredCurve = SubResource("Curve_fv1ps")
+CurrentFoldAmount = 0.045
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TreeBase" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_jg126")
+}
+autoplay = "TreeBreathe"
+
+[node name="CameraMagnet" type="Node3D" parent="TreeBase" index="1"]
+script = ExtResource("4_a7ysl")
+ProximityRange = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TreeBase" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02857, 0)
+mesh = SubResource("QuadMesh_a20hk")
+
+[node name="LeftBranch" type="Node3D" parent="TreeBase" index="3"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -0.877612, 1.98275, 0)
+FullFold = Transform3D(0.999672, 0, 0.0256012, 0, 1, 0, -0.0256012, 0, 0.999672, -0.877612, 1.98275, 0)
+AlteredCurve = SubResource("Curve_txfih")
+CurrentFoldAmount = 0.045
+
+[node name="BranchImage" type="MeshInstance3D" parent="TreeBase/LeftBranch" index="0"]
+transform = Transform3D(0.900986, 0.433848, 0, -0.433848, 0.900986, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_6e8mf")
+skeleton = NodePath("../..")
+
+[node name="PaperFolding" type="Node3D" parent="TreeBase/LeftBranch" index="1"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_024o1")
+CurrentFoldAmount = 0.045
+
+[node name="BranchLengthImage" type="MeshInstance3D" parent="TreeBase/LeftBranch/PaperFolding" index="0"]
+transform = Transform3D(0.590732, 0.806867, 0, -0.806867, 0.590732, 0, 0, 0, 1, -0.258098, 0.193573, 0)
+mesh = SubResource("QuadMesh_vct7w")
+skeleton = NodePath("../../..")
+
+[node name="BranchTipImage" type="MeshInstance3D" parent="TreeBase/LeftBranch/PaperFolding" index="1"]
+transform = Transform3D(-0.791435, 0.611176, 0.00964686, 0.609526, 0.790287, -0.0626495, -0.0459135, -0.0437029, -0.99799, -0.85088, 0.802375, -0.140438)
+mesh = SubResource("QuadMesh_jytio")
+skeleton = NodePath("../../..")
+
+[node name="BranchLantern" parent="TreeBase/LeftBranch/PaperFolding/BranchTipImage" index="0" instance=ExtResource("7_6l64a")]
+transform = Transform3D(-0.785185, 0.609526, 0.10937, 0.590907, 0.790287, -0.162098, -0.185236, -0.0626492, -0.980696, 0.267922, -0.0702244, -0.0448066)
+
+[node name="PaperFolding2" type="Node3D" parent="TreeBase/LeftBranch" index="2"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_c8cvk")
+CurrentFoldAmount = 0.045
+
+[node name="BranchLengthImage" type="MeshInstance3D" parent="TreeBase/LeftBranch/PaperFolding2" index="0"]
+transform = Transform3D(0.995331, -0.0965233, 0, 0.0965233, 0.995331, 0, 0, 0, 1, -0.344129, -0.0253279, 0)
+mesh = SubResource("QuadMesh_6p1q5")
+skeleton = NodePath("../../..")
+
+[node name="BranchTipImage" type="MeshInstance3D" parent="TreeBase/LeftBranch/PaperFolding2" index="1"]
+transform = Transform3D(-0.996462, 0.0838065, 0.00643137, 0.0833217, 0.994966, -0.0556912, -0.0110661, -0.054958, -0.998428, -1.19682, -0.0300928, -0.0558176)
+mesh = SubResource("QuadMesh_jytio")
+skeleton = NodePath("../../..")
+
+[node name="BranchLantern" parent="TreeBase/LeftBranch/PaperFolding2/BranchTipImage" index="0" instance=ExtResource("7_6l64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+
+[node name="RightBranch" type="Node3D" parent="TreeBase" index="4"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(-0.960799, 0, 0.277247, 0, 1, 0, -0.277247, 0, -0.960799, 0.713698, 1.77792, 0)
+FullFold = Transform3D(-0.997484, 0, -0.0708883, 0, 1, 0, 0.0708883, 0, -0.997484, 0.713698, 1.77792, 0)
+AlteredCurve = SubResource("Curve_xvatd")
+CurrentFoldAmount = 0.045
+
+[node name="BranchImage" type="MeshInstance3D" parent="TreeBase/RightBranch" index="0"]
+transform = Transform3D(0.900986, 0.433848, 0, -0.433848, 0.900986, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_6e8mf")
+skeleton = NodePath("../..")
+
+[node name="PaperFolding" type="Node3D" parent="TreeBase/RightBranch" index="1"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_j66i2")
+CurrentFoldAmount = 0.045
+
+[node name="BranchLengthImage" type="MeshInstance3D" parent="TreeBase/RightBranch/PaperFolding" index="0"]
+transform = Transform3D(0.590732, 0.806867, 0, -0.806867, 0.590732, 0, 0, 0, 1, -0.258098, 0.193573, 0)
+mesh = SubResource("QuadMesh_vct7w")
+skeleton = NodePath("../../..")
+
+[node name="BranchTipImage" type="MeshInstance3D" parent="TreeBase/RightBranch/PaperFolding" index="1"]
+transform = Transform3D(-0.791435, 0.611176, 0.00964686, 0.609526, 0.790287, -0.0626495, -0.0459135, -0.0437029, -0.99799, -0.85088, 0.802375, -0.140438)
+mesh = SubResource("QuadMesh_jytio")
+skeleton = NodePath("../../..")
+
+[node name="BranchLantern" parent="TreeBase/RightBranch/PaperFolding/BranchTipImage" index="0" instance=ExtResource("7_6l64a")]
+transform = Transform3D(1, 4.88013e-07, 8.9407e-08, -4.69387e-07, 1, 1.19209e-07, -2.98023e-08, -4.47035e-08, 1, 0.145334, -0.185278, -0.00130075)
+
+[node name="PaperFolding2" type="Node3D" parent="TreeBase/RightBranch" index="2"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+FullFold = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+AlteredCurve = SubResource("Curve_cvkms")
+CurrentFoldAmount = 0.045
+
+[node name="BranchLengthImage" type="MeshInstance3D" parent="TreeBase/RightBranch/PaperFolding2" index="0"]
+transform = Transform3D(0.995331, -0.0965233, 0, 0.0965233, 0.995331, 0, 0, 0, 1, -0.344129, -0.0253279, 0)
+mesh = SubResource("QuadMesh_6p1q5")
+skeleton = NodePath("../../..")
+
+[node name="BranchTipImage" type="MeshInstance3D" parent="TreeBase/RightBranch/PaperFolding2" index="1"]
+transform = Transform3D(-0.996462, 0.0838065, 0.00643137, 0.0833217, 0.994966, -0.0556912, -0.0110661, -0.054958, -0.998428, -1.19682, -0.0300928, -0.0558176)
+mesh = SubResource("QuadMesh_jytio")
+skeleton = NodePath("../../..")
+
+[node name="BranchLantern" parent="TreeBase/RightBranch/PaperFolding2/BranchTipImage" index="0" instance=ExtResource("7_6l64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+
+[node name="Top" type="Node3D" parent="TreeBase" index="5"]
+script = ExtResource("3_eexbx")
+NoFold = Transform3D(1, 0, 0, 0, 0.988933, -0.148362, 0, 0.148362, 0.988933, 0, 1.55902, 0)
+FullFold = Transform3D(1, 0, 0, 0, 0.997059, 0.076632, 0, -0.076632, 0.997059, 0, 1.55902, 0)
+AlteredCurve = SubResource("Curve_ben76")
+CurrentFoldAmount = 0.045
+
+[node name="BranchLengthImage" type="MeshInstance3D" parent="TreeBase/Top" index="0"]
+transform = Transform3D(-0.0131705, 0.994772, 0.101266, 0.988994, -0.00196567, 0.147937, 0.147363, 0.1021, -0.983799, 0.0920008, 0.680118, -0.323444)
+mesh = SubResource("QuadMesh_eqxmt")
+skeleton = NodePath("../..")
+
+[node name="BranchTipImage" type="MeshInstance3D" parent="TreeBase/Top" index="1"]
+transform = Transform3D(-0.51735, -0.850367, 0.0960546, 0.847887, -0.494138, 0.192134, -0.11592, 0.180843, 0.976658, -0.499835, 1.51248, -0.00904735)
+mesh = SubResource("QuadMesh_jytio")
+skeleton = NodePath("../..")
+
+[node name="BranchLantern" parent="TreeBase/Top/BranchTipImage" index="0" instance=ExtResource("7_6l64a")]
+transform = Transform3D(1, -5.58794e-08, -1.49012e-08, 7.07805e-08, 1, 2.98023e-08, -1.49012e-08, 1.49012e-08, 1, -0.128557, 0.505134, 0.598778)
+
+[node name="BranchTipImage2" type="MeshInstance3D" parent="TreeBase/Top" index="2"]
+transform = Transform3D(0.31199, -0.92689, 0.208659, 0.942987, 0.328896, 0.0510233, -0.11592, 0.180843, 0.976658, 0.185594, 1.5567, -0.159042)
+mesh = SubResource("QuadMesh_oarl8")
+skeleton = NodePath("../..")
+
+[node name="BranchTipImage3" type="MeshInstance3D" parent="TreeBase/Top" index="3"]
+transform = Transform3D(0.530862, 0.783324, 0.323406, 0.78763, -0.596888, 0.152853, 0.31277, 0.173581, -0.933835, 0.76047, 1.44615, -0.00904735)
+mesh = SubResource("QuadMesh_pxnk8")
+skeleton = NodePath("../..")
+
+[node name="BranchLantern" parent="TreeBase/Top/BranchTipImage3" index="0" instance=ExtResource("7_6l64a")]
+transform = Transform3D(0.530861, 0.746076, 0.401942, 0.783322, -0.612982, 0.103236, 0.323405, 0.260045, -0.909825, 0.206627, 0.232262, -0.161089)
+
+[node name="GUI" parent="." index="6"]
+visible = false

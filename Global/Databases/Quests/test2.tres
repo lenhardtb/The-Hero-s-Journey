@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://chm8vrlgf372y"]
+
+[ext_resource type="Script" path="res://addons/inkchangeplugin/manager_scripts/Quest.cs" id="1_dym02"]
+
+[resource]
+script = ExtResource("1_dym02")
+QuestName = "Quest Test 2"
+InvisibleToPlayer = false

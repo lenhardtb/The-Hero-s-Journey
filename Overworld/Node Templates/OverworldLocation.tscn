@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://booxuhanbjbps"]
+
+[ext_resource type="Script" path="res://Overworld/Scripts/OverworldLocation.cs" id="1_iqxwm"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="2_7woor"]
+[ext_resource type="Script" path="res://Global/Scripts/AnimatedQuadMesh.cs" id="3_f02c0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1bo4"]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4adb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_7woor")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_lj8qe"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_w4adb")
+size = Vector2(1, 1.5)
+
+[node name="OverworldLocation" type="RigidBody3D"]
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_iqxwm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_e1bo4")
+
+[node name="AnimatedQuadMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("QuadMesh_lj8qe")
+script = ExtResource("3_f02c0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedQuadMesh"]

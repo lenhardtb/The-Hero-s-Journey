@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://d33jch7pi3mow"]
+
+[ext_resource type="Script" path="res://addons/inkchangeplugin/manager_scripts/InkChangeManager.cs" id="1_t37a7"]
+
+[node name="InkChangeManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t37a7")
+
+[node name="TopMenu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentSceneButton" type="Button" parent="TopMenu/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "View all quests appearing in the currently edited scene."
+text = "Current Quests"
+
+[node name="NewQuestButton" type="Button" parent="TopMenu/HBoxContainer"]
+layout_mode = 2
+text = "+ New Quest"
+
+[node name="MainEditor" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestsView" type="Panel" parent="MainEditor"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MainEditor/QuestsView"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 33.0
+grow_horizontal = 2
+
+[node name="SearchBar" type="TextEdit" parent="MainEditor/QuestsView/HFlowContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+placeholder_text = "Search..."
+
+[node name="ThisSceneCheckBox" type="CheckBox" parent="MainEditor/QuestsView/HFlowContainer"]
+layout_mode = 2
+text = "Currrent Scene Only"
+
+[node name="SearchFeedback" type="Label" parent="MainEditor/QuestsView/HFlowContainer"]
+layout_mode = 2
+text = "Done searching."
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainEditor/QuestsView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainEditor/QuestsView/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomMenu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusLabel1" type="Label" parent="BottomMenu/HBoxContainer"]
+layout_mode = 2
+text = "res://addons/inkchangeplugin/InkChangeManagerDock.tscn"
+
+[node name="StatusLabel2" type="Label" parent="BottomMenu/HBoxContainer"]
+layout_mode = 2
+text = "Test"

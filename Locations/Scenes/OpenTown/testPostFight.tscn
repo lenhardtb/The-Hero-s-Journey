@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6swmqcmwkv8t"]
+
+[ext_resource type="PackedScene" uid="uid://kln4m2ynuwc" path="res://Locations/Scenes/Node Templates/BasicNPC.tscn" id="1_5an5v"]
+[ext_resource type="Resource" uid="uid://dorjq80uhrubm" path="res://Locations/Scenes/OpenTown/Ink/testPostFight.ink" id="2_lww7h"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="3_xaad6"]
+[ext_resource type="Texture2D" uid="uid://b51lpl3tppaj7" path="res://icon32.png" id="4_3xfdu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pujf"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_xaad6")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("4_3xfdu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8s1r7"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_5pujf")
+
+[node name="BasicNPC" instance=ExtResource("1_5an5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+Story = ExtResource("2_lww7h")
+
+[node name="QuadMesh" parent="." index="1"]
+mesh = SubResource("QuadMesh_8s1r7")
+ShaderTexture = ExtResource("4_3xfdu")

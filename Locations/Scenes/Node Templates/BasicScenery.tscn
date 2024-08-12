@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcrorvp7gebc4"]
+
+[ext_resource type="Script" path="res://Locations/Scripts/BasicNPC.cs" id="1_i1cj1"]
+[ext_resource type="Shape3D" uid="uid://rulnrj2ly3gt" path="res://Locations/Scenes/Node Templates/CharacterShapeDefault.tres" id="2_2grvt"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="3_1xvgs"]
+[ext_resource type="Texture2D" uid="uid://b51lpl3tppaj7" path="res://icon32.png" id="4_bd4ty"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydssy"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_1xvgs")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("4_bd4ty")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bdt8w"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_ydssy")
+size = Vector2(0.25, 0.25)
+
+[node name="BasicScenery" type="StaticBody3D"]
+script = ExtResource("1_i1cj1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317383, -0.00180054, 0)
+shape = ExtResource("2_2grvt")
+
+[node name="QuadMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_bdt8w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseEnter"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExit"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://daycrdv4o6qii"]
+
+[ext_resource type="PackedScene" uid="uid://kln4m2ynuwc" path="res://Locations/Scenes/Node Templates/BasicNPC.tscn" id="1_xm2oc"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="2_0g2iw"]
+[ext_resource type="Script" path="res://Locations/Scripts/Shopkeep.cs" id="2_pyy6p"]
+[ext_resource type="Script" path="res://Global/Scripts/CameraMagnet.cs" id="3_fmq5i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7721"]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gfq4e"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_0g2iw")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_vgly2"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_gfq4e")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oqouk"]
+resource_local_to_scene = true
+
+[node name="Shopkeep" instance=ExtResource("1_xm2oc")]
+script = ExtResource("2_pyy6p")
+StoreData = null
+SaveDataName = ""
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_h7721")
+
+[node name="QuadMesh" parent="." index="1"]
+mesh = SubResource("QuadMesh_vgly2")
+
+[node name="CameraMagnet" type="Node3D" parent="." index="2"]
+script = ExtResource("3_fmq5i")
+ActivatesWithProximity = false
+
+[node name="CollisionShape3D" parent="InteractableComponent" index="0"]
+shape = SubResource("BoxShape3D_oqouk")

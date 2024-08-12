@@ -1,0 +1,48 @@
+[gd_resource type="AnimationLibrary" load_steps=5 format=3 uid="uid://c0a28vuxr45nw"]
+
+[ext_resource type="Texture2D" uid="uid://dk0qxal5n8374" path="res://Overworld/MobAnimations/MobFighting1.png" id="1_tooab"]
+[ext_resource type="Texture2D" uid="uid://bo3aiygftp80" path="res://Overworld/MobAnimations/MobFighting2.png" id="2_n0nhb"]
+
+[sub_resource type="Animation" id="Animation_p5dec"]
+resource_name = "Fighting"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(":ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_tooab"), ExtResource("2_n0nhb")]
+}
+
+[sub_resource type="Animation" id="Animation_ue63n"]
+resource_name = "PopUp"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.707, 0, 0, 0.707, 1, 1, 0, 0, 0, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..:FinishedPopUp")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[resource]
+_data = {
+"Fighting": SubResource("Animation_p5dec"),
+"PopUp": SubResource("Animation_ue63n")
+}

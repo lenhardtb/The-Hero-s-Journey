@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://2i71hsex3jwq"]
+
+[ext_resource type="Script" path="res://Global/Scripts/PaperFolding.cs" id="1_3m7id"]
+[ext_resource type="Shader" path="res://Global/PaperSprite.gdshader" id="2_f3kny"]
+[ext_resource type="Texture2D" uid="uid://c4ycrtmlhqceo" path="res://Global/Resources/testPaperTexture1.jpg" id="3_qf5oh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ry5hu"]
+render_priority = 0
+shader = ExtResource("2_f3kny")
+shader_parameter/paper_tex = ExtResource("3_qf5oh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ap66a"]
+material = SubResource("ShaderMaterial_ry5hu")
+size = Vector2(0.5, 0.25)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gqd1d"]
+render_priority = 0
+shader = ExtResource("2_f3kny")
+shader_parameter/paper_tex = ExtResource("3_qf5oh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nhq8y"]
+material = SubResource("ShaderMaterial_gqd1d")
+size = Vector2(0.5, 0.25)
+
+[node name="HalfFoldingSpace" type="Node3D"]
+script = ExtResource("1_3m7id")
+CurrentFoldAmount = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_ap66a")
+
+[node name="HalfRot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 0)
+script = ExtResource("1_3m7id")
+CurrentFoldAmount = 1.0
+
+[node name="HalfPos" type="Node3D" parent="HalfRot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 0)
+script = ExtResource("1_3m7id")
+CurrentFoldAmount = 1.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HalfRot/HalfPos"]
+mesh = SubResource("QuadMesh_nhq8y")

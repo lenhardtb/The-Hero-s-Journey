@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://cx0cuqv3ux3nw"
+path="res://.godot/imported/testFight.ink-0f2c2427e7a6aa35add6b2dcc60bb284.res"
+
+[deps]
+
+source_file="res://Locations/Scenes/OpenTown/Ink/testFight.ink"
+dest_files=["res://.godot/imported/testFight.ink-0f2c2427e7a6aa35add6b2dcc60bb284.res"]
+
+[params]
+
+is_main_file=true
+compress=true

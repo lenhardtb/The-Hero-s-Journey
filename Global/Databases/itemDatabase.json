@@ -1,0 +1,47 @@
+{
+	"Biscuit":{
+			"name": "Biscuit",
+			"type": "food",
+			"tier": 1,
+			"cost": 5,
+			"decay": 50,
+			"productionTime": 0.5
+		},
+	"Bread":
+		{
+			"name": "Bread",
+			"type": "food",
+			"tier": 2,
+			"cost": 10,
+			"decay": 10,
+			"productionTime": 0.5
+		},
+	"GrandmasCookies":
+		{
+			"name": "Grandma's Cookies",
+			"type": "food",
+			"tier": 3,
+			"cost": 5,
+			"decay": 5,
+			"productionTime": 0.5
+		},
+	"Bedroll":
+		{
+			"name": "Bedroll",
+			"type": "supplies",
+			"tier": 2,
+			"cost": 50,
+			"decay": 5,
+			"productionTime": 0.5
+		},
+	"Emerald":
+		{
+			"name": "Emerald",
+			"type": "luxury",
+			"tier": 3,
+			"cost": 2000,
+			"decay": 5000,
+			"productionTime": 25
+		}
+	
+}

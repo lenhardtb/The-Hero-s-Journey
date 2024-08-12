@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://rkbawjtc4la5"]
+
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="1_b6vld"]
+[ext_resource type="Texture2D" uid="uid://ncvhx8umxvvc" path="res://Global/Resources/testPaperTexture2.jpg" id="2_t1cy0"]
+[ext_resource type="Texture2D" uid="uid://b3ku0qhur32hp" path="res://Locations/Scenes/TreeShrine/BranchLantern.png" id="3_oav3c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i32gh"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vishw"]
+radius = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jnvg5"]
+render_priority = 0
+shader = ExtResource("1_b6vld")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("3_oav3c")
+shader_parameter/paper_tex = ExtResource("2_t1cy0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_rjc7i"]
+material = SubResource("ShaderMaterial_jnvg5")
+
+[node name="BranchLantern" type="Node3D"]
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+node_a = NodePath("../Anchor")
+node_b = NodePath("../HangingPart")
+params/impulse_clamp = 1.0
+
+[node name="Anchor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Anchor"]
+shape = SubResource("BoxShape3D_i32gh")
+
+[node name="HangingPart" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.336558, 0)
+axis_lock_angular_y = true
+mass = 10.0
+angular_damp = 1.0
+constant_force = Vector3(0, -50, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HangingPart"]
+shape = SubResource("SphereShape3D_vishw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HangingPart"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HangingPart/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.210048, 0)
+mesh = SubResource("QuadMesh_rjc7i")
+skeleton = NodePath("")

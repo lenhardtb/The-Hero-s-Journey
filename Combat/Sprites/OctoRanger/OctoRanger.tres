@@ -1,0 +1,98 @@
+[gd_resource type="AnimationLibrary" load_steps=46 format=3 uid="uid://cpiq7f7jor6km"]
+
+[ext_resource type="Texture2D" uid="uid://blfnnkysfw338" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle1.png" id="1_k1jrk"]
+[ext_resource type="Texture2D" uid="uid://cq12y6fy1biel" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle2.png" id="2_ni7ht"]
+[ext_resource type="Texture2D" uid="uid://ddskj1wwytdti" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle3.png" id="3_y41fm"]
+[ext_resource type="Texture2D" uid="uid://cj5f8t846jdwv" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle4.png" id="4_235of"]
+[ext_resource type="Texture2D" uid="uid://be417t4bxfeoy" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle5.png" id="5_taqrn"]
+[ext_resource type="Texture2D" uid="uid://jrajl4sspm3x" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle6.png" id="6_ng4mq"]
+[ext_resource type="Texture2D" uid="uid://docsamn0tbwwu" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle7.png" id="7_j4jtd"]
+[ext_resource type="Texture2D" uid="uid://8we37keveo1l" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle8.png" id="8_s58yo"]
+[ext_resource type="Texture2D" uid="uid://ihyhkg0eiyqr" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle9.png" id="9_t6ev0"]
+[ext_resource type="Texture2D" uid="uid://7yc5glyogtjh" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle10.png" id="10_4nlkv"]
+[ext_resource type="Texture2D" uid="uid://chf0vumvewoct" path="res://Combat/Sprites/OctoRanger/OctoRangerIdle11.png" id="11_mowy5"]
+[ext_resource type="Texture2D" uid="uid://c36n3ke0u0h8v" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack1.png" id="12_lr1qs"]
+[ext_resource type="Texture2D" uid="uid://dhordr4ej7p11" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack2.png" id="13_n5wgk"]
+[ext_resource type="Texture2D" uid="uid://4doufvx2nm4d" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack3.png" id="14_mouvn"]
+[ext_resource type="Texture2D" uid="uid://c2vnkij50rb66" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack4.png" id="15_lunmd"]
+[ext_resource type="Texture2D" uid="uid://chd84b57g7mhk" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack5.png" id="16_hhe3j"]
+[ext_resource type="Texture2D" uid="uid://cvdx7j20b0ou1" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack6.png" id="17_i0hmw"]
+[ext_resource type="Texture2D" uid="uid://chlvkaudnkftw" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack7.png" id="18_ri1y2"]
+[ext_resource type="Texture2D" uid="uid://dvfu23j2vlic5" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack8.png" id="19_uj53n"]
+[ext_resource type="Texture2D" uid="uid://cb38chpie0fr6" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack9.png" id="20_5jknh"]
+[ext_resource type="Texture2D" uid="uid://uftk6hc6vgtw" path="res://Combat/Sprites/OctoRanger/OctoRangerAttack10.png" id="21_wduvk"]
+[ext_resource type="Texture2D" uid="uid://dtpfqwctylqqa" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath1.png" id="22_uhett"]
+[ext_resource type="Texture2D" uid="uid://cto8ch6aiktf4" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath2.png" id="23_6iprt"]
+[ext_resource type="Texture2D" uid="uid://cnhg843ku38pl" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath3.png" id="24_54v1i"]
+[ext_resource type="Texture2D" uid="uid://b07tnkam5bc43" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath4.png" id="25_jspeg"]
+[ext_resource type="Texture2D" uid="uid://bwtfgx8jyqlv4" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath5.png" id="26_hpnir"]
+[ext_resource type="Texture2D" uid="uid://mdo1jc4olo5b" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath6.png" id="27_h75ed"]
+[ext_resource type="Texture2D" uid="uid://bgdpe8dqhxroa" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath7.png" id="28_8g735"]
+[ext_resource type="Texture2D" uid="uid://dqr65x3aaqeyx" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath8.png" id="29_jixpm"]
+[ext_resource type="Texture2D" uid="uid://dxacjhq45q5hh" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath9.png" id="30_0d2mp"]
+[ext_resource type="Texture2D" uid="uid://c7b3cwhrgwuhd" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath10.png" id="31_3oe4p"]
+[ext_resource type="Texture2D" uid="uid://bygam35lj3c46" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath11.png" id="32_a2w00"]
+[ext_resource type="Texture2D" uid="uid://3jvoqiy4v01d" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath12.png" id="33_mp4c6"]
+[ext_resource type="Texture2D" uid="uid://bqagbonrw7msk" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath13.png" id="34_cqs1d"]
+[ext_resource type="Texture2D" uid="uid://4iqjb2jfl6fw" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath14.png" id="35_w3b17"]
+[ext_resource type="Texture2D" uid="uid://pvrciddvwvv2" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath15.png" id="36_0ncq4"]
+[ext_resource type="Texture2D" uid="uid://dabodglyvmm5x" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath16.png" id="37_hhogm"]
+[ext_resource type="Texture2D" uid="uid://bag7d1phxoroo" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath17.png" id="38_p6k1u"]
+[ext_resource type="Texture2D" uid="uid://bd3yfs14t6dss" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath18.png" id="39_hq7jv"]
+[ext_resource type="Texture2D" uid="uid://bfbndfdaml3pq" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath19.png" id="40_tjtyg"]
+[ext_resource type="Texture2D" uid="uid://crvmevcxc87wo" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath20.png" id="41_m1v4a"]
+[ext_resource type="Texture2D" uid="uid://xn1ru7oo1dug" path="res://Combat/Sprites/OctoRanger/OctoRangerDeath21.png" id="42_m2j43"]
+
+[sub_resource type="Animation" id="Animation_7dl5q"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_k1jrk"), ExtResource("2_ni7ht"), ExtResource("3_y41fm"), ExtResource("4_235of"), ExtResource("5_taqrn"), ExtResource("6_ng4mq"), ExtResource("7_j4jtd"), ExtResource("8_s58yo"), ExtResource("9_t6ev0"), ExtResource("10_4nlkv"), ExtResource("11_mowy5")]
+}
+
+[sub_resource type="Animation" id="Animation_d5joc"]
+resource_name = "Attack"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_lr1qs"), ExtResource("13_n5wgk"), ExtResource("14_mouvn"), ExtResource("15_lunmd"), ExtResource("16_hhe3j"), ExtResource("17_i0hmw"), ExtResource("18_ri1y2"), ExtResource("19_uj53n"), ExtResource("20_5jknh"), ExtResource("21_wduvk")]
+}
+
+[sub_resource type="Animation" id="Animation_b0ltd"]
+resource_name = "Death"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.9001, 2, 2.0001, 2.0002, 2.0003, 2.0004, 2.0005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("22_uhett"), ExtResource("23_6iprt"), ExtResource("24_54v1i"), ExtResource("25_jspeg"), ExtResource("26_hpnir"), ExtResource("27_h75ed"), ExtResource("28_8g735"), ExtResource("29_jixpm"), ExtResource("30_0d2mp"), ExtResource("31_3oe4p"), ExtResource("32_a2w00"), ExtResource("33_mp4c6"), ExtResource("34_cqs1d"), ExtResource("35_w3b17"), ExtResource("36_0ncq4"), ExtResource("37_hhogm"), ExtResource("38_p6k1u"), ExtResource("39_hq7jv"), ExtResource("40_tjtyg"), ExtResource("41_m1v4a"), ExtResource("41_m1v4a"), ExtResource("42_m2j43"), ExtResource("42_m2j43"), ExtResource("42_m2j43"), ExtResource("42_m2j43"), ExtResource("42_m2j43"), ExtResource("42_m2j43")]
+}
+
+[resource]
+_data = {
+"Attack": SubResource("Animation_d5joc"),
+"Death": SubResource("Animation_b0ltd"),
+"Idle": SubResource("Animation_7dl5q")
+}

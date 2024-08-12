@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw82cb6ml4rk2"]
+
+[ext_resource type="PackedScene" uid="uid://bhe4bxfr77drm" path="res://Locations/Scenes/OpenTown/OpenTown.tscn" id="1_7tvyu"]
+[ext_resource type="Script" path="res://Global/Scripts/MainGame.cs" id="1_55d4v"]
+[ext_resource type="Script" path="res://Global/Scripts/THJGlobals.cs" id="1_yyeq0"]
+
+[node name="MainGame" type="Node3D" node_paths=PackedStringArray("View")]
+script = ExtResource("1_55d4v")
+View = NodePath("View")
+FirstScene = ExtResource("1_7tvyu")
+UsingTestData = true
+
+[node name="THJGlobals" type="Node3D" parent="." node_paths=PackedStringArray("StartMainScene")]
+script = ExtResource("1_yyeq0")
+StartMainScene = NodePath("..")
+
+[node name="View" type="Node3D" parent="."]

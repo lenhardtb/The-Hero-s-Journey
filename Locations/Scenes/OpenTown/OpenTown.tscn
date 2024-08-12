@@ -1,0 +1,211 @@
+[gd_scene load_steps=35 format=3 uid="uid://bhe4bxfr77drm"]
+
+[ext_resource type="PackedScene" uid="uid://c861edyuvt3ek" path="res://Locations/Scenes/Node Templates/BaseLocation.tscn" id="1_i6cml"]
+[ext_resource type="PackedScene" uid="uid://jq43cpr4kb0l" path="res://Locations/Scenes/OpenTown/OpenTownBackground.tscn" id="2_wf3fn"]
+[ext_resource type="Script" path="res://addons/inkchangeplugin/change_scripts/BasicInkCondition.cs" id="3_2vgp2"]
+[ext_resource type="PackedScene" uid="uid://dh4ejvd338cmi" path="res://Locations/Scenes/Node Templates/LocationExit.tscn" id="4_4up47"]
+[ext_resource type="PackedScene" uid="uid://kln4m2ynuwc" path="res://Locations/Scenes/Node Templates/BasicNPC.tscn" id="4_mdelq"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="5_qwug0"]
+[ext_resource type="Script" path="res://addons/inkchangeplugin/change_scripts/CombatInkEffect.cs" id="5_uf7hf"]
+[ext_resource type="Resource" uid="uid://c8nx22wqx6unw" path="res://Locations/Scenes/OpenTown/Ink/testBox.ink" id="5_ybxnl"]
+[ext_resource type="Resource" uid="uid://cx0cuqv3ux3nw" path="res://Locations/Scenes/OpenTown/Ink/testFight.ink" id="8_xitv4"]
+[ext_resource type="Texture2D" uid="uid://18koso308ivh" path="res://Locations/Scenes/OpenTown/villagenpc1.png" id="11_2vu04"]
+[ext_resource type="Texture2D" uid="uid://bhlv215lrcwr6" path="res://icon32Angy.png" id="13_erqt8"]
+[ext_resource type="Texture2D" uid="uid://4pkji21cjy41" path="res://Locations/Scenes/OpenTown/opentowntiles.png" id="13_oksti"]
+[ext_resource type="PackedScene" uid="uid://daycrdv4o6qii" path="res://Locations/Scenes/Node Templates/Shopkeep.tscn" id="14_76cck"]
+[ext_resource type="Texture2D" uid="uid://coeyurji17k03" path="res://Locations/Scenes/OpenTown/OpenTownShopkeep.png" id="14_cpw5y"]
+[ext_resource type="JSON" path="res://Global/Databases/shopkeepDatabase.json" id="14_wbvll"]
+
+[sub_resource type="Resource" id="Resource_u0dr6"]
+script = ExtResource("3_2vgp2")
+Repeats = false
+Variable = "openTown_TestFight"
+Equality = 0
+ValueToCompare = 1
+
+[sub_resource type="Resource" id="Resource_imhl7"]
+script = ExtResource("5_uf7hf")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uwdhr"]
+viewport_path = NodePath("TileMapDisplay/SubViewport")
+
+[sub_resource type="Gradient" id="Gradient_a5mxi"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.870588, 0.207843, 0.14902, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wraj7"]
+gradient = SubResource("Gradient_a5mxi")
+width = 1
+height = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_35unh"]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mw5c"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_qwug0")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("11_2vu04")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5q7t0"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_0mw5c")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1krax"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fyrqx"]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ma3f"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_qwug0")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("13_erqt8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5rd15"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_8ma3f")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xksb2"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmgnv"]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xiyfm"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_qwug0")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("14_cpw5y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_38cmt"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_xiyfm")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x853r"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7k0t3"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f0ct2"]
+
+[node name="BaseLocation" instance=ExtResource("1_i6cml")]
+
+[node name="InkChangeLoader" parent="." index="0"]
+InkDependentChanges = [SubResource("Resource_u0dr6"), SubResource("Resource_imhl7")]
+
+[node name="Player" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50486, -2.50426, 0)
+InteractDistance = 0.5
+
+[node name="TileMapDisplay" parent="." index="2" node_paths=PackedStringArray("tm")]
+texture = SubResource("ViewportTexture_uwdhr")
+tm = NodePath("SubViewport/OpenTownBackground")
+
+[node name="SubViewport" parent="TileMapDisplay" index="0"]
+size = Vector2i(448, 512)
+
+[node name="OpenTownBackground" parent="TileMapDisplay/SubViewport" index="0" instance=ExtResource("2_wf3fn")]
+position = Vector2(256, 256)
+
+[node name="ColorRect" type="Sprite2D" parent="TileMapDisplay/SubViewport" index="2"]
+z_index = -1
+scale = Vector2(800, 800)
+texture = SubResource("GradientTexture2D_wraj7")
+
+[node name="BasicNPC" parent="." index="3" instance=ExtResource("4_mdelq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.619337, 0.724508, 0)
+Story = ExtResource("5_ybxnl")
+
+[node name="CollisionShape3D" parent="BasicNPC" index="0"]
+shape = SubResource("BoxShape3D_35unh")
+
+[node name="QuadMesh" parent="BasicNPC" index="1"]
+mesh = SubResource("QuadMesh_5q7t0")
+ShaderTexture = ExtResource("11_2vu04")
+
+[node name="CollisionShape3D" parent="BasicNPC/InteractableComponent" index="0"]
+shape = SubResource("BoxShape3D_1krax")
+
+[node name="BasicNPCTestFight" parent="." index="4" instance=ExtResource("4_mdelq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+Story = ExtResource("8_xitv4")
+
+[node name="CollisionShape3D" parent="BasicNPCTestFight" index="0"]
+shape = SubResource("BoxShape3D_fyrqx")
+
+[node name="QuadMesh" parent="BasicNPCTestFight" index="1"]
+mesh = SubResource("QuadMesh_5rd15")
+ShaderTexture = ExtResource("13_erqt8")
+
+[node name="CollisionShape3D" parent="BasicNPCTestFight/InteractableComponent" index="0"]
+shape = SubResource("BoxShape3D_xksb2")
+
+[node name="Shopkeep" parent="." index="5" instance=ExtResource("14_76cck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
+StoreData = ExtResource("14_wbvll")
+SaveDataName = "OpenTownShop"
+
+[node name="CollisionShape3D" parent="Shopkeep" index="0"]
+shape = SubResource("BoxShape3D_tmgnv")
+
+[node name="QuadMesh" parent="Shopkeep" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0549603, -0.502036, 0.00174409)
+mesh = SubResource("QuadMesh_38cmt")
+ShaderTexture = ExtResource("14_cpw5y")
+
+[node name="AnimationPlayer" parent="Shopkeep/QuadMesh" index="0"]
+libraries = {}
+
+[node name="InteractableComponent" parent="Shopkeep" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+InteractionTargetMethod = ""
+
+[node name="CollisionShape3D" parent="Shopkeep/InteractableComponent" index="0"]
+shape = SubResource("BoxShape3D_x853r")
+
+[node name="ShopStall" type="StaticBody3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99276, 2.06126, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShopStall" index="0"]
+shape = SubResource("BoxShape3D_7k0t3")
+
+[node name="Sprite3D" type="Sprite3D" parent="ShopStall" index="1"]
+pixel_size = 0.0313
+texture_filter = 0
+texture = ExtResource("13_oksti")
+region_enabled = true
+region_rect = Rect2(128, 256, 64, 64)
+
+[node name="Exits" parent="." index="7"]
+DropLocations = PackedVector3Array(6.02967, 4.60448, 0, 3.90558, 3.49447, 0)
+
+[node name="LocationExit" parent="Exits" index="0" instance=ExtResource("4_4up47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.02501, 5.50979, 0)
+shape = SubResource("BoxShape3D_f0ct2")
+
+[node name="LocationExit2" parent="Exits" index="1" instance=ExtResource("4_4up47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01396, -10.5097, 0)
+
+[node name="TabContainer" parent="GUI/TweeningMessageBox/MessageBoxUI" index="0"]
+anchor_right = 0.753
+offset_right = 0.0799866
+
+[node name="GridContainer" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/ChoicePanel" index="1"]
+anchors_preset = 15
+anchor_top = 0.0
+offset_top = -14.0
+offset_bottom = 15.0
+grow_vertical = 2
+
+[editable path="BasicNPC"]
+[editable path="BasicNPCTestFight"]
+[editable path="Shopkeep"]

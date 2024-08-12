@@ -1,0 +1,92 @@
+[gd_resource type="AnimationLibrary" load_steps=40 format=3 uid="uid://bdj08vnj8j6mo"]
+
+[ext_resource type="Texture2D" uid="uid://cbrup2oo7v7xv" path="res://Combat/Sprites/Satyr/SatyrIdle1.png" id="1_n2usf"]
+[ext_resource type="Texture2D" uid="uid://bom0tvp3y60d0" path="res://Combat/Sprites/Satyr/SatyrIdle2.png" id="2_oy1ly"]
+[ext_resource type="Texture2D" uid="uid://ssj4i81u684i" path="res://Combat/Sprites/Satyr/SatyrAttack3.png" id="3_dbx65"]
+[ext_resource type="Texture2D" uid="uid://c80np57nx54xe" path="res://Combat/Sprites/Satyr/SatyrIdle3.png" id="3_x5ory"]
+[ext_resource type="Texture2D" uid="uid://bn2hb5ej4kv47" path="res://Combat/Sprites/Satyr/SatyrIdle4.png" id="4_2peif"]
+[ext_resource type="Texture2D" uid="uid://pyqy0ejuqwpv" path="res://Combat/Sprites/Satyr/SatyrAttack4.png" id="4_lg40y"]
+[ext_resource type="Texture2D" uid="uid://w1r14g5sbari" path="res://Combat/Sprites/Satyr/SatyrAttack5.png" id="5_0k7m3"]
+[ext_resource type="Texture2D" uid="uid://8f3c2oomlrub" path="res://Combat/Sprites/Satyr/SatyrIdle5.png" id="5_3hxme"]
+[ext_resource type="Texture2D" uid="uid://b2gbm6ji15voq" path="res://Combat/Sprites/Satyr/SatyrAttack6.png" id="6_3m0xb"]
+[ext_resource type="Texture2D" uid="uid://cjh3u1b43fjj0" path="res://Combat/Sprites/Satyr/SatyrIdle6.png" id="6_iimau"]
+[ext_resource type="Texture2D" uid="uid://dx4tarlmms8q8" path="res://Combat/Sprites/Satyr/SatyrIdle7.png" id="7_iig6j"]
+[ext_resource type="Texture2D" uid="uid://7yk81lmhtcex" path="res://Combat/Sprites/Satyr/SatyrAttack7.png" id="7_vbt1s"]
+[ext_resource type="Texture2D" uid="uid://dxh3avvgw3oqg" path="res://Combat/Sprites/Satyr/SatyrIdle8.png" id="8_fdeyp"]
+[ext_resource type="Texture2D" uid="uid://b2v6f4tyl86bn" path="res://Combat/Sprites/Satyr/SatyrAttack8.png" id="8_s6i8k"]
+[ext_resource type="Texture2D" uid="uid://cu53rwcxoqbpc" path="res://Combat/Sprites/Satyr/SatyrIdle9.png" id="9_furut"]
+[ext_resource type="Texture2D" uid="uid://deb228fssfhk1" path="res://Combat/Sprites/Satyr/SatyrAttack9.png" id="9_ywh5a"]
+[ext_resource type="Texture2D" uid="uid://bplp7sww1o5pr" path="res://Combat/Sprites/Satyr/SatyrIdle10.png" id="10_7j3pg"]
+[ext_resource type="Texture2D" uid="uid://ut27rhdi38td" path="res://Combat/Sprites/Satyr/SatyrAttack10.png" id="10_csr5x"]
+[ext_resource type="Texture2D" uid="uid://ccff48ni22av" path="res://Combat/Sprites/Satyr/SatyrAttack1.png" id="11_c1iqh"]
+[ext_resource type="Texture2D" uid="uid://bmwb7xwqwpt4j" path="res://Combat/Sprites/Satyr/SatyrAttack11.png" id="11_du2vp"]
+[ext_resource type="Texture2D" uid="uid://diqmr6rf2qmfi" path="res://Combat/Sprites/Satyr/SatyrAttack2.png" id="12_66hb2"]
+[ext_resource type="Texture2D" uid="uid://dqk377r8sushi" path="res://Combat/Sprites/Satyr/SatyrAttack12.png" id="12_bg6vb"]
+[ext_resource type="Texture2D" uid="uid://h31ifqc5yvud" path="res://Combat/Sprites/Satyr/SatyrDeath1.png" id="13_7l1cf"]
+[ext_resource type="Texture2D" uid="uid://g76p5qcdxy5e" path="res://Combat/Sprites/Satyr/SatyrDeath2.png" id="14_priik"]
+[ext_resource type="Texture2D" uid="uid://epync432o2lt" path="res://Combat/Sprites/Satyr/SatyrDeath3.png" id="15_3twtb"]
+[ext_resource type="Texture2D" uid="uid://tfofi6ky1gqs" path="res://Combat/Sprites/Satyr/SatyrDeath4.png" id="16_e03x7"]
+[ext_resource type="Texture2D" uid="uid://vsmhyo0cv0jm" path="res://Combat/Sprites/Satyr/SatyrDeath5.png" id="17_e66pp"]
+[ext_resource type="Texture2D" uid="uid://ppeki8w0wo6n" path="res://Combat/Sprites/Satyr/SatyrDeath6.png" id="18_qvmf2"]
+[ext_resource type="Texture2D" uid="uid://dssalpn0minsd" path="res://Combat/Sprites/Satyr/SatyrDeath7.png" id="19_b5k2q"]
+[ext_resource type="Texture2D" uid="uid://bkw41v27k2x4u" path="res://Combat/Sprites/Satyr/SatyrDeath8.png" id="20_4xhaj"]
+[ext_resource type="Texture2D" uid="uid://s031l1jc2a0t" path="res://Combat/Sprites/Satyr/SatyrDeath9.png" id="21_06h4c"]
+[ext_resource type="Texture2D" uid="uid://cqyuwnew42pij" path="res://Combat/Sprites/Satyr/SatyrDeath10.png" id="22_6v8qv"]
+[ext_resource type="Texture2D" uid="uid://vpqi3lmg6mem" path="res://Combat/Sprites/Satyr/SatyrDeath11.png" id="23_xdmgy"]
+[ext_resource type="Texture2D" uid="uid://b1quyyp86gegx" path="res://Combat/Sprites/Satyr/SatyrDeath12.png" id="24_xcsq2"]
+[ext_resource type="Texture2D" uid="uid://hh2wimbuqv6u" path="res://Combat/Sprites/Satyr/SatyrDeath13.png" id="25_1ads6"]
+[ext_resource type="Texture2D" uid="uid://dtc1lj4sus42x" path="res://Combat/Sprites/Satyr/SatyrDeath14.png" id="26_8pgyk"]
+
+[sub_resource type="Animation" id="Animation_8tbxo"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(":ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_c1iqh"), ExtResource("12_66hb2"), ExtResource("3_dbx65"), ExtResource("4_lg40y"), ExtResource("5_0k7m3"), ExtResource("6_3m0xb"), ExtResource("7_vbt1s"), ExtResource("8_s6i8k"), ExtResource("9_ywh5a"), ExtResource("10_csr5x"), ExtResource("11_du2vp"), ExtResource("12_bg6vb")]
+}
+
+[sub_resource type="Animation" id="Animation_18bdv"]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(":ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_7l1cf"), ExtResource("14_priik"), ExtResource("15_3twtb"), ExtResource("16_e03x7"), ExtResource("17_e66pp"), ExtResource("18_qvmf2"), ExtResource("19_b5k2q"), ExtResource("20_4xhaj"), ExtResource("21_06h4c"), ExtResource("22_6v8qv"), ExtResource("23_xdmgy"), ExtResource("24_xcsq2"), ExtResource("25_1ads6"), ExtResource("26_8pgyk")]
+}
+
+[sub_resource type="Animation" id="Animation_8gy8i"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(":ShaderTexture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 0.12, 0.22, 0.32, 0.42, 0.52, 0.62, 0.72, 0.81, 0.91),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_n2usf"), ExtResource("2_oy1ly"), ExtResource("3_x5ory"), ExtResource("4_2peif"), ExtResource("5_3hxme"), ExtResource("6_iimau"), ExtResource("7_iig6j"), ExtResource("8_fdeyp"), ExtResource("9_furut"), ExtResource("10_7j3pg")]
+}
+
+[resource]
+_data = {
+"Attack": SubResource("Animation_8tbxo"),
+"Death": SubResource("Animation_18bdv"),
+"Idle": SubResource("Animation_8gy8i")
+}

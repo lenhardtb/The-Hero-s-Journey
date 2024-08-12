@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhr36wopck8se"]
+
+[ext_resource type="Script" path="res://Overworld/Scripts/OverworldPlayer.cs" id="1_7m25i"]
+[ext_resource type="Script" path="res://Overworld/Scripts/MobMovement/PlayerBehavior.cs" id="2_mp3tn"]
+[ext_resource type="Shape3D" uid="uid://rulnrj2ly3gt" path="res://Locations/Scenes/Node Templates/CharacterShapeDefault.tres" id="2_tafqe"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="4_2lrdg"]
+[ext_resource type="Script" path="res://Global/Scripts/AnimatedQuadMesh.cs" id="4_mf8ls"]
+[ext_resource type="Texture2D" uid="uid://dk0qxal5n8374" path="res://Overworld/MobAnimations/MobFighting1.png" id="5_41mw7"]
+[ext_resource type="AnimationLibrary" uid="uid://c0a28vuxr45nw" path="res://Overworld/MobAnimations/MobUniversalAnim.tres" id="7_n3ojx"]
+[ext_resource type="AnimationLibrary" uid="uid://bdxiv785yf0sa" path="res://Overworld/MobAnimations/Player/Player.tres" id="8_pywre"]
+
+[sub_resource type="Resource" id="Resource_ydy8s"]
+script = ExtResource("2_mp3tn")
+MovementSpeed = 4.0
+Allegiances = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jl7op"]
+render_priority = 0
+shader = ExtResource("4_2lrdg")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("5_41mw7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tkqcd"]
+material = SubResource("ShaderMaterial_jl7op")
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykwha"]
+
+[node name="OverworldPlayer" type="RigidBody3D" node_paths=PackedStringArray("MyCamera") groups=["Mob", "Player"]]
+max_contacts_reported = 5
+contact_monitor = true
+script = ExtResource("1_7m25i")
+MyCamera = NodePath("Camera3D")
+AnimationName = "Player"
+Behavior = SubResource("Resource_ydy8s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_tafqe")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+projection = 1
+size = 8.0
+
+[node name="Rotation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, -0.5, 0)
+
+[node name="AnimatedQuadMesh" type="MeshInstance3D" parent="Rotation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("QuadMesh_tkqcd")
+skeleton = NodePath("../..")
+script = ExtResource("4_mf8ls")
+ShaderTexture = ExtResource("5_41mw7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rotation/AnimatedQuadMesh"]
+libraries = {
+"": SubResource("AnimationLibrary_ykwha"),
+"MobUniversalAnim": ExtResource("7_n3ojx"),
+"Player": ExtResource("8_pywre")
+}
+autoplay = "MobUniversalAnim/PopUp"

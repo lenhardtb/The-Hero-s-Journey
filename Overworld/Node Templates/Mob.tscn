@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://dv1cc8s6ttd0t"]
+
+[ext_resource type="Script" path="res://Overworld/Scripts/Mob.cs" id="1_xp1cc"]
+[ext_resource type="Shape3D" uid="uid://bdh88shv76adq" path="res://Overworld/Node Templates/CharacterShapeDefault.tres" id="2_71f68"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="3_sej5s"]
+[ext_resource type="Script" path="res://Global/Scripts/AnimatedQuadMesh.cs" id="3_viwwx"]
+[ext_resource type="Texture2D" uid="uid://dk0qxal5n8374" path="res://Overworld/MobAnimations/MobFighting1.png" id="4_u548k"]
+[ext_resource type="AnimationLibrary" uid="uid://c0a28vuxr45nw" path="res://Overworld/MobAnimations/MobUniversalAnim.tres" id="5_34pl1"]
+[ext_resource type="AnimationLibrary" uid="uid://c1lcaibqb0fgt" path="res://Overworld/MobAnimations/Satyr/Satyr.tres" id="5_tisoc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jr4qm"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_sej5s")
+shader_parameter/outlineColor = null
+shader_parameter/outlineWidth = 0
+shader_parameter/texture_albedo = ExtResource("4_u548k")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dya65"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_jr4qm")
+center_offset = Vector3(0, 0.125, 0)
+
+[node name="Mob" type="RigidBody3D" groups=["Mob"]]
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_xp1cc")
+FinishedPopUp = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("2_71f68")
+
+[node name="Rotation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 0)
+
+[node name="AnimatedQuadMesh" type="MeshInstance3D" parent="Rotation"]
+mesh = SubResource("QuadMesh_dya65")
+skeleton = NodePath("../..")
+script = ExtResource("3_viwwx")
+ShaderTexture = ExtResource("4_u548k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rotation/AnimatedQuadMesh"]
+libraries = {
+"MobUniversalAnim": ExtResource("5_34pl1"),
+"Satyr": ExtResource("5_tisoc")
+}
+autoplay = "MobUniversalAnim/PopUp"

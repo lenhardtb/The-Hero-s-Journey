@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://ba2qfmmxmtcf8"]
+
+[ext_resource type="Script" path="res://Global/Scripts/TileMapDisplay3D.cs" id="1_ifkie"]
+[ext_resource type="Script" path="res://addons/inkchangeplugin/change_scripts/InkChangeLoader.cs" id="1_t7fxf"]
+[ext_resource type="PackedScene" uid="uid://bl6evkphn4n4p" path="res://Overworld/OverworldBackground.tscn" id="2_phui8"]
+[ext_resource type="PackedScene" uid="uid://bhr36wopck8se" path="res://Overworld/Node Templates/OverworldPlayer.tscn" id="3_spidc"]
+[ext_resource type="PackedScene" uid="uid://dv1cc8s6ttd0t" path="res://Overworld/Node Templates/Mob.tscn" id="5_h3ry7"]
+[ext_resource type="Script" path="res://Overworld/Scripts/MobMovement/RoamBehavior.cs" id="6_xd82t"]
+[ext_resource type="PackedScene" uid="uid://booxuhanbjbps" path="res://Overworld/Node Templates/OverworldLocation.tscn" id="7_nr32v"]
+[ext_resource type="Texture2D" uid="uid://l6gvt8j81hxc" path="res://Overworld/Sprites/TreeShrineIcon.png" id="9_a6ldo"]
+[ext_resource type="Texture2D" uid="uid://dc15wdiuqt7xr" path="res://Overworld/Sprites/SmallTownIcon.png" id="9_hp0ap"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e8r1c"]
+viewport_path = NodePath("Background/SubViewport")
+
+[sub_resource type="Resource" id="Resource_ooom6"]
+resource_local_to_scene = true
+script = ExtResource("6_xd82t")
+Center = Vector3(7, 0, 0)
+RoamRange = 4.0
+Allegiances = 4
+
+[node name="Overworld" type="Node3D"]
+
+[node name="InkChangeLoader" type="Node" parent="."]
+script = ExtResource("1_t7fxf")
+
+[node name="Background" type="Sprite3D" parent="." node_paths=PackedStringArray("sub", "tm") groups=["OverworldTileMapDisplay"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+pixel_size = 0.0313
+texture_filter = 0
+texture = SubResource("ViewportTexture_e8r1c")
+script = ExtResource("1_ifkie")
+sub = NodePath("SubViewport")
+tm = NodePath("SubViewport/OverworldBackground")
+
+[node name="SubViewport" type="SubViewport" parent="Background"]
+size = Vector2i(864, 704)
+
+[node name="OverworldBackground" parent="Background/SubViewport" instance=ExtResource("2_phui8")]
+position = Vector2(448, 384)
+
+[node name="Camera2D" type="Camera2D" parent="Background/SubViewport"]
+
+[node name="OverworldPlayer" parent="." node_paths=PackedStringArray("BackgroundTileMap") instance=ExtResource("3_spidc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54774, -5.97262, 0)
+InteractDistance = 2.0
+BackgroundTileMap = NodePath("../Background")
+PrefersRoads = true
+CanWalk = true
+
+[node name="Mob" parent="." instance=ExtResource("5_h3ry7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+AnimationName = "Satyr"
+Behavior = SubResource("Resource_ooom6")
+CanSwim = true
+CanWalk = true
+
+[node name="OpenTown" parent="." instance=ExtResource("7_nr32v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50535, 2.94269, 0)
+LocationScene = "res://Locations/Scenes/OpenTown/OpenTown.tscn"
+_Texture = ExtResource("9_hp0ap")
+
+[node name="TreeShrine" parent="." instance=ExtResource("7_nr32v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50873, -4.9457, 0)
+LocationScene = "res://Locations/Scenes/TreeShrine/TreeShrine.tscn"
+_Texture = ExtResource("9_a6ldo")

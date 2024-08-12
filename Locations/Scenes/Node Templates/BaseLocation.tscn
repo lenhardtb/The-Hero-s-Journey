@@ -1,0 +1,426 @@
+[gd_scene load_steps=17 format=3 uid="uid://c861edyuvt3ek"]
+
+[ext_resource type="Script" path="res://addons/inkchangeplugin/change_scripts/InkChangeLoader.cs" id="1_8ejni"]
+[ext_resource type="PackedScene" uid="uid://bkw3mpy3tw75a" path="res://Locations/Scenes/Node Templates/LocationPlayer.tscn" id="1_toegf"]
+[ext_resource type="Script" path="res://Global/Scripts/TileMapDisplay3D.cs" id="2_lfwih"]
+[ext_resource type="Script" path="res://Locations/Scripts/TweeningUIHolder.cs" id="3_2tb21"]
+[ext_resource type="Script" path="res://Locations/Scripts/TweeningUI.cs" id="4_86f8d"]
+[ext_resource type="Script" path="res://Locations/Scripts/LocationExit.cs" id="4_kgqyp"]
+[ext_resource type="Script" path="res://Locations/Scripts/MessageBoxUI.cs" id="4_m7huf"]
+[ext_resource type="PackedScene" uid="uid://h40k6amo6y05" path="res://Global/Node Templates/MoneyCounter.tscn" id="6_xcatq"]
+[ext_resource type="Script" path="res://Locations/Scripts/ShopUI.cs" id="8_pohgs"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2c325"]
+viewport_path = NodePath("TileMapDisplay/SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k6ms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d8l6"]
+bg_color = Color(0.921569, 0.447059, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylqvd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poqud"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1y17"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3a5gi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="BaseLocation" type="Node3D"]
+
+[node name="InkChangeLoader" type="Node" parent="."]
+script = ExtResource("1_8ejni")
+
+[node name="Player" parent="." instance=ExtResource("1_toegf")]
+
+[node name="TileMapDisplay" type="Sprite3D" parent="." node_paths=PackedStringArray("sub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+pixel_size = 0.0313
+texture_filter = 0
+texture = SubResource("ViewportTexture_2c325")
+script = ExtResource("2_lfwih")
+sub = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="TileMapDisplay"]
+size = Vector2i(128, 32)
+
+[node name="Camera2D" type="Camera2D" parent="TileMapDisplay/SubViewport"]
+
+[node name="Exits" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+script = ExtResource("4_kgqyp")
+
+[node name="GUI" type="CanvasLayer" parent="." groups=["TweeningUIHolder"]]
+script = ExtResource("3_2tb21")
+
+[node name="MoneyCounter" parent="GUI" instance=ExtResource("6_xcatq")]
+
+[node name="TweeningMessageBox" type="Panel" parent="GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0k6ms")
+script = ExtResource("4_86f8d")
+
+[node name="MessageBoxUI" type="Panel" parent="GUI/TweeningMessageBox" groups=["MessageBoxUI"]]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -65.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5d8l6")
+script = ExtResource("4_m7huf")
+metadata/Direction = ""
+metadata/TransType = ""
+metadata/Trigger = ""
+
+[node name="TabContainer" type="TabContainer" parent="GUI/TweeningMessageBox/MessageBoxUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.755
+anchor_bottom = 0.988
+offset_right = -0.200043
+offset_bottom = -0.231998
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 3.0
+tabs_visible = false
+
+[node name="MessagePanel" type="Panel" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer"]
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/MessagePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 217.0
+offset_bottom = -0.167988
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is an example message"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ChoicePanel" type="Panel" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/ChoicePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.317
+offset_bottom = 0.0289993
+grow_horizontal = 2
+text_overrun_behavior = 3
+
+[node name="GridContainer" type="GridContainer" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/ChoicePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -46.01
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ChoiceButton1" type="Button" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/ChoicePanel/GridContainer"]
+layout_mode = 2
+text = "Choice 1"
+
+[node name="ChoiceButton2" type="Button" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/ChoicePanel/GridContainer"]
+layout_mode = 2
+text = "Choice 2"
+
+[node name="ChoiceButton3" type="Button" parent="GUI/TweeningMessageBox/MessageBoxUI/TabContainer/ChoicePanel/GridContainer"]
+layout_mode = 2
+text = "Choice 3"
+
+[node name="NextButton" type="Button" parent="GUI/TweeningMessageBox/MessageBoxUI"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.756
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.159973
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+text = "Next"
+
+[node name="TweeningMenu" type="Panel" parent="GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_86f8d")
+Direction = "Top"
+InputTrigger = "ui_exit"
+
+[node name="MenuUI" type="Panel" parent="GUI/TweeningMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GUI/TweeningMenu/MenuUI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 7.0
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GUI/TweeningMenu/MenuUI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -398.0
+offset_right = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/TweeningMenu/MenuUI/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="GUI/TweeningMenu/MenuUI/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[node name="TweeningShop" type="Panel" parent="GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ylqvd")
+script = ExtResource("4_86f8d")
+
+[node name="ShopUI" type="Panel" parent="GUI/TweeningShop" groups=["ShopUI"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_poqud")
+script = ExtResource("8_pohgs")
+
+[node name="CloseButton" type="Button" parent="GUI/TweeningShop/ShopUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -38.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = 32.0
+grow_horizontal = 0
+text = "X"
+
+[node name="PlayerInventoryShell" type="Panel" parent="GUI/TweeningShop/ShopUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.177
+anchor_bottom = 0.992
+offset_left = 6.0
+offset_top = 58.0
+offset_right = 7.72
+offset_bottom = -68.16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GUI/TweeningShop/ShopUI/PlayerInventoryShell"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="PlayerInventory" type="ItemList" parent="GUI/TweeningShop/ShopUI/PlayerInventoryShell/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 1
+allow_search = false
+max_text_lines = 2
+auto_height = true
+text_overrun_behavior = 0
+item_count = 5
+fixed_column_width = 100
+icon_mode = 0
+item_0/text = "Bread"
+item_1/text = "Grandma's Cookies"
+item_2/text = "Emerald"
+item_3/text = "Boquet"
+item_4/text = "Camping Supplies"
+
+[node name="ShopInventoryShell" type="Panel" parent="GUI/TweeningShop/ShopUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.809
+anchor_top = 0.002
+anchor_right = 0.994
+anchor_bottom = 0.998
+offset_left = 0.23999
+offset_top = 57.04
+offset_right = -3.16003
+offset_bottom = -71.04
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GUI/TweeningShop/ShopUI/ShopInventoryShell"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="ShopInventory" type="ItemList" parent="GUI/TweeningShop/ShopUI/ShopInventoryShell/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 1
+allow_reselect = true
+allow_search = false
+max_text_lines = 2
+auto_height = true
+text_overrun_behavior = 0
+item_count = 4
+fixed_column_width = 100
+icon_mode = 0
+item_0/text = "Grandma's Cookies"
+item_1/text = "Bread"
+item_2/text = "Boquet"
+item_3/text = "Camping Supplies"
+
+[node name="OverviewShell" type="Panel" parent="GUI/TweeningShop/ShopUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18
+anchor_top = 0.008
+anchor_right = 0.802
+anchor_bottom = 0.567
+offset_left = 2.8
+offset_top = 0.16
+offset_right = -0.279968
+offset_bottom = -0.159973
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1y17")
+
+[node name="ReputationLabel" type="Label" parent="GUI/TweeningShop/ShopUI/OverviewShell"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "Reputation: Moderate Positive"
+
+[node name="ReputationEventsShell" type="Panel" parent="GUI/TweeningShop/ShopUI/OverviewShell"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -65.0
+offset_right = 194.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GUI/TweeningShop/ShopUI/OverviewShell/ReputationEventsShell"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="ReputationEvents" type="VBoxContainer" parent="GUI/TweeningShop/ShopUI/OverviewShell/ReputationEventsShell/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GUI/TweeningShop/ShopUI/OverviewShell/ReputationEventsShell/ScrollContainer/ReputationEvents"]
+layout_mode = 2
+text = "+ Pity"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GUI/TweeningShop/ShopUI/OverviewShell/ReputationEventsShell/ScrollContainer/ReputationEvents"]
+layout_mode = 2
+text = "- Killed Edna's Cousin"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="GUI/TweeningShop/ShopUI/OverviewShell/ReputationEventsShell/ScrollContainer/ReputationEvents"]
+layout_mode = 2
+text = "+ Gave Good Deals"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="GUI/TweeningShop/ShopUI/OverviewShell/ReputationEventsShell/ScrollContainer/ReputationEvents"]
+layout_mode = 2
+text = "- Gave a Bad Deal"
+autowrap_mode = 2
+
+[node name="DealShell" type="Panel" parent="GUI/TweeningShop/ShopUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.694
+anchor_right = 0.792
+anchor_bottom = 0.852
+offset_left = -0.240005
+offset_top = -0.119995
+offset_right = 0.119965
+offset_bottom = 0.039978
+theme_override_styles/panel = SubResource("StyleBoxFlat_3a5gi")
+
+[node name="DealScrollBar" type="HScrollBar" parent="GUI/TweeningShop/ShopUI/DealShell"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 29.0
+grow_horizontal = 2
+min_value = 1.0
+max_value = 200.0
+step = 1.0
+page = 5.0
+value = 100.0
+
+[node name="GoButton" type="Button" parent="GUI/TweeningShop/ShopUI/DealShell"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Sell!"

@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://kln4m2ynuwc"]
+
+[ext_resource type="Script" path="res://Locations/Scripts/BasicNPC.cs" id="1_c5tog"]
+[ext_resource type="Shape3D" uid="uid://rulnrj2ly3gt" path="res://Locations/Scenes/Node Templates/CharacterShapeDefault.tres" id="2_p7otd"]
+[ext_resource type="Shader" path="res://Global/DefaultSprite.gdshader" id="3_vrh1u"]
+[ext_resource type="Script" path="res://Global/Scripts/AnimatedQuadMesh.cs" id="5_67dsd"]
+[ext_resource type="Script" path="res://Global/Scripts/InteractableComponent.cs" id="5_ilgf2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydssy"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_vrh1u")
+shader_parameter/outlineColor = Color(0.831373, 0.709804, 0.184314, 1)
+shader_parameter/outlineWidth = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_bdt8w"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_ydssy")
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43a7x"]
+
+[node name="BasicNPC" type="StaticBody3D"]
+script = ExtResource("1_c5tog")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317383, -0.00180054, 0)
+shape = ExtResource("2_p7otd")
+
+[node name="QuadMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_bdt8w")
+script = ExtResource("5_67dsd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="QuadMesh"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_43a7x")
+}
+
+[node name="InteractableComponent" type="Area3D" parent="." node_paths=PackedStringArray("OutlinedMesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0190312)
+script = ExtResource("5_ilgf2")
+OutlinedMesh = NodePath("../QuadMesh")
+InteractionTargetMethod = "InteractableHandler"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableComponent"]
+shape = ExtResource("2_p7otd")
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseEnter"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExit"]

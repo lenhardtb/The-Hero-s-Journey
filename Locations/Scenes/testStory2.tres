@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="InkStory" load_steps=2 format=3 uid="uid://b50i6unxmyk2y"]
+
+[ext_resource type="Script" path="res://addons/GodotInk/Src/InkStory.cs" id="1_qky21"]
+
+[resource]
+script = ExtResource("1_qky21")

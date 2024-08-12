@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cslou3ogv78ej"]
+
+[node name="QuestNameDialog" type="FileDialog"]
+title = "Choose a quest filename"
+initial_position = 1
+root_subfolder = "res://Global/Databases/Quests/"
+filters = PackedStringArray("*.tres")
