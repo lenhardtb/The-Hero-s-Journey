@@ -12,7 +12,7 @@ public partial class InkChangePlugin : EditorPlugin
 	SceneChangedEventHandler dockListener;
 	public override void _EnterTree()
 	{
-		_Dock = GD.Load<PackedScene>("res://addons/inkchangeplugin/InkChangeManagerDock.tscn").Instantiate<InkChangeManager>();
+		_Dock = GD.Load<PackedScene>("res://addons/InkChangePlugin/InkChangeManagerDock.tscn").Instantiate<InkChangeManager>();
 		dockListener = (Node n) => _Dock.CurrentScene = n;
 		this.SceneChanged += dockListener;
 		AddControlToBottomPanel(_Dock, "InkChangeManager");

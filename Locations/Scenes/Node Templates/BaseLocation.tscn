@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c861edyuvt3ek"]
 
-[ext_resource type="Script" path="res://addons/inkchangeplugin/change_scripts/InkChangeLoader.cs" id="1_8ejni"]
+[ext_resource type="Script" path="res://addons/InkChangePlugin/ChangeScripts/InkChangeLoader.cs" id="1_8ejni"]
 [ext_resource type="PackedScene" uid="uid://bkw3mpy3tw75a" path="res://Locations/Scenes/Node Templates/LocationPlayer.tscn" id="1_toegf"]
 [ext_resource type="Script" path="res://Global/Scripts/TileMapDisplay3D.cs" id="2_lfwih"]
 [ext_resource type="Script" path="res://Locations/Scripts/TweeningUIHolder.cs" id="3_2tb21"]
@@ -37,16 +37,17 @@ script = ExtResource("1_8ejni")
 
 [node name="Player" parent="." instance=ExtResource("1_toegf")]
 
-[node name="TileMapDisplay" type="Sprite3D" parent="." node_paths=PackedStringArray("sub")]
+[node name="TileMapDisplay" type="Sprite3D" parent="." node_paths=PackedStringArray("sub", "cam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 pixel_size = 0.0313
 texture_filter = 0
 texture = SubResource("ViewportTexture_2c325")
 script = ExtResource("2_lfwih")
 sub = NodePath("SubViewport")
+cam = NodePath("SubViewport/Camera2D")
 
 [node name="SubViewport" type="SubViewport" parent="TileMapDisplay"]
-size = Vector2i(128, 32)
+size = Vector2i(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="TileMapDisplay/SubViewport"]
 

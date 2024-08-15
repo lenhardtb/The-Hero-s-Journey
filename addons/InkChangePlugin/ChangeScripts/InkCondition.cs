@@ -19,7 +19,7 @@ public abstract partial class InkCondition : Resource
 	
 	//TODO: support multiple value types
 	[Export]
-	public int ValueToCompare;
+	public Variant ValueToCompare;
 	
 	//used in InkChangeLoader.Ready() to determine if DoChange() should be called on scene start
 	public virtual bool HasChangeHappened(Variant variable) => false;

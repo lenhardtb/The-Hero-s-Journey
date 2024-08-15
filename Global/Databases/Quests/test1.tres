@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://m4q2qarsjw1k"]
 
-[ext_resource type="Script" path="res://addons/inkchangeplugin/manager_scripts/Quest.cs" id="1_pn4b8"]
+[ext_resource type="Script" path="res://addons/InkChangePlugin/ManagerScripts/Quest.cs" id="1_pn4b8"]
 
 [resource]
 script = ExtResource("1_pn4b8")

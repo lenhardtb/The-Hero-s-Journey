@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d33jch7pi3mow"]
 
-[ext_resource type="Script" path="res://addons/inkchangeplugin/manager_scripts/InkChangeManager.cs" id="1_t37a7"]
+[ext_resource type="Script" path="res://addons/InkChangePlugin/ManagerScripts/InkChangeManager.cs" id="1_t37a7"]
 
 [node name="InkChangeManager" type="Control"]
 layout_mode = 3

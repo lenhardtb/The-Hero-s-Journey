@@ -30,7 +30,7 @@ project/assembly_name="The Hero-s Journey"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GodotInk/plugin.cfg")
+enabled=PackedStringArray("res://addons/GodotInk/plugin.cfg", "res://addons/InkChangePlugin/plugin.cfg")
 
 [gui]
 

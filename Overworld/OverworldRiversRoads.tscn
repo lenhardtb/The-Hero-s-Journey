@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=4 uid="uid://dtms5vhoh0pmb"]
+
+[ext_resource type="TileSet" uid="uid://8q6hi3erbg1l" path="res://Overworld/OverworldBackgroundTileSet.tres" id="1_rddfr"]
+
+[node name="RiversRoads" type="TileMapLayer"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAP//AQADAAAAAAABAAAAAQACAAEAAAAAAAAAAQABAAEAAAAAAP//AQAAAAEAAAD/////AQACAAAAAAD+////AQACAAAAAAD9////AQAEAAAAAAD3//r/AQACAAAAAAD2//r/AQACAAAAAAD6//r/AQADAAAAAAD6//z/AQABAAAAAAD6//3/AQAEAAAAAAD7//3/AQACAAAAAAD8//3/AQACAAAAAAD9//7/AQABAAAAAAD9//v/AQABAAAAAAD9//r/AQABAAAAAAD9//n/AQAFAAAAAAD+//n/AQAGAAAAAAD9//z/AQABAAAAAAD5//r/AQACAAAAAAD9//3/AQACAAEAAAD6//v/AQABAAAAAAD4//r/AQACAAAAAAA=")
+tile_set = ExtResource("1_rddfr")

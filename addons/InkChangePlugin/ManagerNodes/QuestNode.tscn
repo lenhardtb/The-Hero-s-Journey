@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3 uid="uid://76cofbonvv4r"]
+
+[ext_resource type="Script" path="res://addons/InkChangePlugin/ManagerScripts/QuestNode.cs" id="1_vdvhs"]
+
+[node name="QuestNode" type="Control"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vdvhs")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 28.0
+grow_horizontal = 2
+
+[node name="QuestName" type="TextEdit" parent="HFlowContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "[No Quest Assigned]"
+
+[node name="CheckButton" type="CheckButton" parent="HFlowContainer"]
+layout_mode = 2
+text = "Invisible to Player?"
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 37.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SeeAlsoPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="SeeAlsoPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 20.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="SeeAlsoPanel/HFlowContainer"]
+layout_mode = 2
+text = "See Also:"
+
+[node name="NodesCheckButton" type="CheckButton" parent="SeeAlsoPanel/HFlowContainer"]
+layout_mode = 2
+text = "Nodes"
+
+[node name="VariablesCheckButton" type="CheckButton" parent="SeeAlsoPanel/HFlowContainer"]
+layout_mode = 2
+text = "Variables"
+
+[node name="QuestsCheckButton" type="CheckButton" parent="SeeAlsoPanel/HFlowContainer"]
+layout_mode = 2
+text = "Quests"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SeeAlsoPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+follow_focus = true
+vertical_scroll_mode = 0
+
+[node name="SeeAlsoResultsContainer" type="HFlowContainer" parent="SeeAlsoPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

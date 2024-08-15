@@ -1,21 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://4pv874rt4gm1"]
 
-[ext_resource type="Script" path="res://addons/inkchangeplugin/manager_scripts/QuestPointNode.cs" id="1_khkmm"]
+[ext_resource type="Script" path="res://addons/InkChangePlugin/ManagerScripts/QuestPointNode.cs" id="1_juub6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqlnq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="QuestPointNode" type="Control"]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(300, 200)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -423.0
-offset_bottom = -357.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_khkmm")
+size_flags_vertical = 3
+script = ExtResource("1_juub6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -29,21 +28,39 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="VBoxContainer/VBoxContainer"]
+[node name="Name" type="TextEdit" parent="VBoxContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
-text = "Name"
+text = "New QuestPoint"
+placeholder_text = "Set QuestPointName..."
 
-[node name="Description" type="Label" parent="VBoxContainer/VBoxContainer"]
+[node name="Description" type="TextEdit" parent="VBoxContainer/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-text = "Description
-Additional Text Here"
+text = "New QuestPoint Description"
+placeholder_text = "Set QuestPoint description..."
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="ChangesSummary" type="GridContainer" parent="VBoxContainer/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="Conditions" type="Label" parent="VBoxContainer/ScrollContainer/ChangesSummary"]
+layout_mode = 2
+text = "Conditions: "
+horizontal_alignment = 1
+
+[node name="Effects" type="Label" parent="VBoxContainer/ScrollContainer/ChangesSummary"]
+layout_mode = 2
+text = "Effects: "
+horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1

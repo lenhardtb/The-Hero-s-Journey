@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1fv35ibbh4g3"]
+
+[ext_resource type="TileSet" uid="uid://8q6hi3erbg1l" path="res://Overworld/OverworldBackgroundTileSet.tres" id="1_dcj21"]
+
+[node name="Features" type="TileMapLayer"]
+use_parent_material = true
+tile_map_data = PackedByteArray(0, 0, 1, 0, 255, 255, 0, 0, 1, 0, 4, 0, 0, 0)
+tile_set = ExtResource("1_dcj21")

@@ -21,7 +21,7 @@ public partial class InkChangeManager : Control
 	
 	Queue<Quest> searchResults;
 	
-	private static PackedScene QuestNodePacked = ResourceLoader.Load<PackedScene>("res://addons/inkchangeplugin/manager_nodes/QuestNode.tscn");
+	private static PackedScene QuestNodePacked = ResourceLoader.Load<PackedScene>("res://addons/InkChangePlugin/ManagerNodes/QuestNode.tscn");
 	
 	private const string questFolderDir = "res://Global/Databases/Quests/";
 	

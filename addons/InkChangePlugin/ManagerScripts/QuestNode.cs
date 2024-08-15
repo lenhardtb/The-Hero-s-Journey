@@ -6,7 +6,7 @@ using System.Threading;
 [GlobalClass]
 public partial class QuestNode : Control
 {
-	private static PackedScene QuestPointNodePacked = ResourceLoader.Load<PackedScene>("res://addons/inkchangeplugin/manager_nodes/QuestPointNode.tscn");
+	private static PackedScene QuestPointNodePacked = ResourceLoader.Load<PackedScene>("res://addons/InkChangePlugin/ManagerNodes/QuestPointNode.tscn");
 	
 	private Quest _Quest;
 	public Quest Quest
@@ -149,6 +149,7 @@ public partial class QuestNode : Control
 	
 	private void TextCheck()
 	{
+		if(QuestName == null)return;//keep getting this in editor on rebuild
 		if(QuestName.Text.Contains("\n"))
 		{
 			QuestName.Text = QuestName.Text.Replace("\n", "");
@@ -189,8 +190,16 @@ public partial class QuestNode : Control
 		buttonsContainer.AddChild(newNextButton);
 		buttonsContainer.MoveChild(newNextButton, qpn.QuestPoint.NextPoint.Count);
 		
-		int stepIndex = GetStepIndex(qpn);
-		int splitIndex = GetSplitIndex(qpn);
+		int stepIndex = GetStepIndex(qpn) + 1;
+		int splitIndex = GetSplitIndex(qpn) + 1;
+		
+		if(stepIndex >= _MaxSteps)
+		{
+			GridContainer child = new GridContainer();
+			QuestPointsContainer.AddChild(child);
+			for(int i = 0; i < splitIndex - 1; i++)
+				child.AddChild(GetFillerPanel());
+		}
 		
 		//insert the node
 		//steps: 
@@ -204,7 +213,7 @@ public partial class QuestNode : Control
 			GridContainer child = (GridContainer)gridChildren[i];
 			
 			Control newNode;
-			if(i != splitIndex) 
+			if(i != stepIndex) 
 				newNode = GetFillerPanel();
 			else 
 				newNode = newQPN;

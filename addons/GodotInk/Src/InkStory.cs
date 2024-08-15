@@ -11,6 +11,7 @@ using PropertyList = Godot.Collections.Array<Godot.Collections.Dictionary>;
 namespace GodotInk;
 
 [Tool]
+[GlobalClass]
 #if GODOT4_1_1_OR_GREATER
 [GlobalClass, Icon("res://addons/GodotInk/GodotInk.svg")]
 #endif
